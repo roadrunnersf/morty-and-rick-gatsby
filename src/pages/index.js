@@ -1,21 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { Link, graphql } from "gatsby"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+import HomeBox from "./../Components/Home/HomeBox"
+import NavBar from "./../Components/Layout/NavBar"
+
+const Home = ({ data }) => {
+  console.log(data.allCharacters.nodes)
+  return (
+    <div>
+      <NavBar />
+      <HomeBox characters={data.allCharacters.nodes} />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  )
+}
 
-export default IndexPage
+// filter(photo => photo.name.toLowerCase().includes("rick") && photo.name !== "Morty Jr's interviewer").
+export default Home
+
+export const query = graphql`
+  query CharactersQuery {
+    allCharacters(limit: 5) {
+      nodes {
+        id
+        name
+        status
+        gender
+        image
+      }
+    }
+  }
+`
