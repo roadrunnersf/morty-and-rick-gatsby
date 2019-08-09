@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import CharactersViewBox from "./CharactersViewBox"
@@ -17,12 +18,14 @@ const CharactersView = ({ characters }) => {
             padding: 5,
           }}
         >
-          <CharactersViewBox
-            key={character.id}
-            character={character}
-            width={250}
-            height={450}
-          />
+          <Link to={`/characters/${character.id}`}>
+            <CharactersViewBox
+              key={character.id}
+              character={character}
+              width={250}
+              height={450}
+            />
+          </Link>
         </div>
       ))}
     </div>
