@@ -6,7 +6,6 @@ import { DndProvider } from "react-dnd"
 import HTML5Backend from "react-dnd-html5-backend"
 
 import { shuffle, createCharacterList } from "./../utils"
-import fetchCharacters from "./../api/characters"
 import ItemTypes from "./../utils/ItemTypes"
 
 import Pic from "./../Components/Guess/Pic"
@@ -14,7 +13,7 @@ import Title from "./../Components/Guess/Title"
 import Score from "./../Components/Guess/Score"
 import NavBar from "./../Components/Layout/NavBar"
 
-const Guess = ({ match }) => {
+const Guess = ({ data }) => {
   const [pics, setPics] = useState([])
   const [titles, setTitles] = useState([])
 
@@ -54,24 +53,22 @@ const Guess = ({ match }) => {
   )
   useEffect(() => {
     const charIDs = [1, 2, 3, 4, 5, 6] // this has been removed until i figure out how to get the number of characters from the URL createCharacterList(match)
-
-    fetchCharacters(charIDs).then(response => {
-      setPics(
-        shuffle(response).map(obj => ({
-          ...obj,
-          accepts: ItemTypes.TITLE,
-          lastDroppedItem: null,
-        }))
-      )
-      setTitles(
-        response
-          .slice()
-          .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
-          .map(obj => ({ ...obj, type: ItemTypes.TITLE }))
-      )
-      setScorer(response.map(o => ({ [o.name]: null })))
-    })
-  }, [match])
+    const characters = data.allCharacters.nodes
+    setPics(
+      shuffle(characters).map(obj => ({
+        ...obj,
+        accepts: ItemTypes.TITLE,
+        lastDroppedItem: null,
+      }))
+    )
+    setTitles(
+      characters
+        .slice()
+        .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+        .map(obj => ({ ...obj, type: ItemTypes.TITLE }))
+    )
+    setScorer(characters.map(o => ({ [o.name]: null })))
+  }, [])
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -117,3 +114,18 @@ const Guess = ({ match }) => {
 }
 
 export default Guess
+
+export const query = graphql`
+  query GuessQuery {
+    allCharacters(limit: 6) {
+      nodes {
+        id
+        name
+        gender
+        species
+        status
+        image
+      }
+    }
+  }
+`
