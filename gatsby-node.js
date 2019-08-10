@@ -2,9 +2,7 @@ const path = require("path")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const templateOfYourCharacterPage = path.resolve(
-    "src/templates/CharactersSingle.js"
-  )
+  const CharactersSingle = path.resolve("src/templates/CharactersSingle.js")
 
   const pages = await graphql(`
     query CharacterPages {
@@ -26,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
   characters.forEach(node => {
     createPage({
       path: `characters/${node.id}`,
-      component: templateOfYourCharacterPage,
+      component: CharactersSingle,
       context: {
         id: node.id,
         name: node.name,
