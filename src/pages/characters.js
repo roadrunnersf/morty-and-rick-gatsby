@@ -1,44 +1,44 @@
-import React, { useState, useEffect } from "react"
-import { Link, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+import React, { useState, useEffect } from 'react'
+import { Link, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
-import CharactersView from "./../Components/Characters/CharactersView"
-import NavBar from "./../Components/Layout/NavBar"
+import CharactersView from './../Components/Characters/CharactersView'
+import NavBar from './../Components/Layout/NavBar'
 
-import { randFromList } from "./../utils/index"
+import { randFromList } from './../utils/index'
 
 const Characters = ({ data }) => {
-  const [characters, setCharacters] = useState([])
+	const [characters, setCharacters] = useState([])
 
-  useEffect(() => {
-    setCharacters(randFromList(data.allCharacters.nodes, 20))
-  }, [])
+	useEffect(() => {
+		setCharacters(randFromList(data.allCharacters.nodes, 20))
+	}, [])
 
-  return (
-    <div>
-      <Helmet>
-        <title>Character Viewer</title>
-      </Helmet>
-      <NavBar />
+	return (
+		<div>
+			<Helmet>
+				<title>Character Viewer</title>
+			</Helmet>
+			<NavBar />
 
-      <CharactersView characters={characters} />
-    </div>
-  )
+			<CharactersView characters={characters} />
+		</div>
+	)
 }
 
 export default Characters
 
 export const query = graphql`
-  query CharactersQuery {
-    allCharacters {
-      nodes {
-        id
-        name
-        gender
-        species
-        status
-        image
-      }
-    }
-  }
+	query CharactersQuery {
+		allCharacters {
+			nodes {
+				id
+				name
+				gender
+				species
+				status
+				image
+			}
+		}
+	}
 `
