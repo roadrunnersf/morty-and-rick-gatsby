@@ -6,7 +6,7 @@ const HomeBox = ({ characters }) => {
   return (
     <Container>
       <Jumbotron>
-        <h1 className="display-3">Welcome to Sam's Rick & Morty</h1>
+        <h1 className="display-3">Welcome to Sam's Rick & Morty App</h1>
         <p className="lead">This is a brief explanation of the site</p>
         <hr className="my-2" />
         <p>Click below to go to the characters page </p>

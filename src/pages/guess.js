@@ -73,7 +73,7 @@ const Guess = ({ data }) => {
   return (
     <DndProvider backend={HTML5Backend}>
       <Helmet>
-        <title>Character Guesser - Rick & Morty</title>
+        <title>Character Guesser</title>
       </Helmet>
       <NavBar />
       <Container fluid={true}>
