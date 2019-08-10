@@ -10,6 +10,11 @@ const randList = (numMax, outputLength) => {
   return array.slice(0, outputLength)
 }
 
+const randFromList = (oldArray, outputLength) => {
+  let array = shuffle(oldArray)
+  return array.slice(0, outputLength)
+}
+
 const shuffle = oldArray => {
   let array = [...oldArray]
   var i = 0,
@@ -88,6 +93,7 @@ const arrWrong = arr => {
 
 export {
   randList,
+  randFromList,
   shuffle,
   createCharacterList,
   arrKeys,
