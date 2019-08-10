@@ -19,13 +19,13 @@ const Home = ({ data }) => {
 export default Home
 
 export const query = graphql`
-  query CharactersQuery {
+  query HomeCharactersQuery {
     allCharacters(limit: 5) {
       nodes {
         id
         name
-        status
         gender
+        status
         image
       }
     }
