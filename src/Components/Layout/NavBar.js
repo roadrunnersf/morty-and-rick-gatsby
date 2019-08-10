@@ -6,7 +6,9 @@ const NavBar = () => (
   <div>
     <Navbar color="dark" dark expand="md">
       <NavbarBrand>
-        <Link to="/">{String.raw`<RickAndMorty />`}</Link>
+        <Link style={{ color: "#999999" }} to="/">
+          {String.raw`<RickAndMorty />`}
+        </Link>
       </NavbarBrand>
 
       <Nav className="ml-auto" navbar>
