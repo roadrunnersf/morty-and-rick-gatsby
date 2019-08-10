@@ -33,13 +33,3 @@ const CharactersView = ({ characters }) => {
 }
 
 export default CharactersView
-
-// fetchCharacters(randList(493, 493))
-//   .then(response =>
-//     response.filter(
-//       obj => obj.name.includes('Rick') && obj.name.includes('Tiny')
-//     )
-//   )
-//   .then(response => {
-//     setCharacters(response)
-//   })
