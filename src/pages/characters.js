@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import CharactersView from "./../Components/Characters/CharactersView"
 import NavBar from "./../Components/Layout/NavBar"
@@ -15,6 +16,9 @@ const Characters = ({ data }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Character Viewer</title>
+      </Helmet>
       <NavBar />
 
       <CharactersView characters={characters} />

@@ -1,15 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Helmet } from "react-helmet"
 
 import CharactersViewBox from "./CharactersViewBox"
 
 const CharactersView = ({ characters }) => {
   return (
     <div>
-      <Helmet>
-        <title>Character Viewer</title>
-      </Helmet>
       {characters.map((character, index) => (
         <div
           key={character.id}
