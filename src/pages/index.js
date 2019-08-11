@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import HomeBox from './../Components/Home/HomeBox'
 import NavBar from './../Components/Layout/NavBar'
