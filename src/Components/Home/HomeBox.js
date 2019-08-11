@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Jumbotron, Button, Container } from 'reactstrap'
 
-const HomeBox = ({ characters }) => {
+const HomeBox = () => {
 	return (
 		<Container>
 			<Jumbotron>
@@ -15,9 +15,6 @@ const HomeBox = ({ characters }) => {
 						<Button color="primary">Characters</Button>
 					</Link>
 				</p>
-				{characters.map(character => (
-					<p>{character.name}</p>
-				))}
 			</Jumbotron>
 		</Container>
 	)

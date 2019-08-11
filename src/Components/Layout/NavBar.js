@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 const NavBar = () => (
 	<div>
-		<Navbar color="dark" dark expand="md">
+		<Navbar color="dark" dark expand="xs">
 			<NavbarBrand>
 				<Link style={{ color: '#999999' }} to="/">
 					{String.raw`<RickAndMorty />`}
