@@ -1,31 +1,25 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Container, Row, Col } from 'reactstrap'
 
-import CharactersViewBox from './CharactersViewBox'
+import CharactersViewCard from './CharactersViewCard'
 
 const CharactersView = ({ characters }) => {
 	return (
-		<div>
-			{characters.map((character, index) => (
-				<div
-					key={character.id}
-					style={{
-						display: 'inline-block',
-						padding: 5
-					}}
-				>
-					<Link to={`/characters/${character.id}`}>
-						<CharactersViewBox
+		<Container>
+			<Row>
+				{characters.map((character, index) => (
+					<Col xs="6" sm="6" md="4" lg="3" xl="3" key={character.id}>
+						<CharactersViewCard
 							key={character.id}
 							character={character}
-							width={250}
-							height={450}
+							linkURL={`/characters/${character.id}`}
 						/>
-					</Link>
-				</div>
-			))}
-		</div>
+					</Col>
+				))}
+			</Row>
+		</Container>
 	)
 }
 
 export default CharactersView
+//<div  key={character.id} style={{ display: 'inline-block', padding: 5}}>

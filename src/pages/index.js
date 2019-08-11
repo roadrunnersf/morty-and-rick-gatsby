@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import HomeBox from './../Components/Home/HomeBox'
 import NavBar from './../Components/Layout/NavBar'
 
 const Home = ({ data }) => {
-	console.log(data.allCharacters.nodes)
 	return (
 		<div>
 			<Helmet>

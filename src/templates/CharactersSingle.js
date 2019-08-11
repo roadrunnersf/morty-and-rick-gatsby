@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import CharactersViewBox from './../Components/Characters/CharactersViewBox'
+import CharactersViewCard from './../Components/Characters/CharactersViewCard'
 import NavBar from './../Components/Layout/NavBar.js'
 
 const CharactersSingle = props => {
@@ -13,10 +12,12 @@ const CharactersSingle = props => {
 				<title>{character.name && character.name}</title>
 			</Helmet>
 			<NavBar />
-			<Link to={`/characters/${parseInt(character.id, 10) + 1}`}>
-				{' '}
-				<CharactersViewBox character={character} width={300} height={520} />
-			</Link>{' '}
+			<div style={{ width: 250 }}>
+				<CharactersViewCard
+					character={character}
+					linkURL={`/characters/${parseInt(character.id, 10) + 1}`}
+				/>
+			</div>
 		</div>
 	)
 }

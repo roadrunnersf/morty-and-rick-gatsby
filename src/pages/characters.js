@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import CharactersView from './../Components/Characters/CharactersView'
