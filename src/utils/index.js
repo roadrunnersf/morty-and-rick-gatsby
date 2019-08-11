@@ -91,6 +91,16 @@ const arrWrong = arr => {
 	return counter
 }
 
+const arrGuesses = arr => {
+	const keys = arrKeys(arr)
+	const values = arrVals(arr)
+	let counter = 0
+	for (var i = 0; i < arr.length; i++) {
+		values[i] && counter++
+	}
+	return counter
+}
+
 export {
 	randList,
 	randFromList,
@@ -99,5 +109,6 @@ export {
 	arrKeys,
 	arrVals,
 	arrMatches,
-	arrWrong
+	arrWrong,
+	arrGuesses
 }

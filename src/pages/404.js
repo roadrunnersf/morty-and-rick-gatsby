@@ -6,7 +6,6 @@ import { Jumbotron, Button } from 'reactstrap'
 import NavBar from './../Components/Layout/NavBar'
 
 const Four0Four = ({ location }) => {
-	console.log(location)
 	return (
 		<div>
 			<NavBar />

@@ -38,12 +38,12 @@ const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 		padding: 5
 	}
 
-	return lastDroppedItem ? (
-		<div style={divStyle}>{cardJSX}</div>
-	) : (
+	return !lastDroppedItem ? (
 		<div ref={drop} style={divStyle}>
 			{cardJSX}
 		</div>
+	) : (
+		<div style={divStyle}>{cardJSX}</div>
 	)
 }
 export default Pic
