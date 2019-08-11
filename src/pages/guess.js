@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import { DndProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 
-import { shuffle, createCharacterList } from './../utils'
+import { shuffle } from './../utils'
 import ItemTypes from './../utils/ItemTypes'
 
 import Pic from './../Components/Guess/Pic'
@@ -52,7 +52,6 @@ const Guess = ({ data }) => {
 		[droppedBoxTitles, pics]
 	)
 	useEffect(() => {
-		const charIDs = [1, 2, 3, 4, 5, 6] // this has been removed until i figure out how to get the number of characters from the URL createCharacterList(match)
 		const characters = data.allCharacters.nodes
 		setPics(
 			shuffle(characters).map(obj => ({
@@ -76,7 +75,7 @@ const Guess = ({ data }) => {
 				<title>Character Guesser</title>
 			</Helmet>
 			<NavBar />
-			<Container fluid={true}>
+			<Container>
 				<Row>
 					<Col xs="10">
 						{pics.map(({ accepts, lastDroppedItem, image, name }, index) => (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
-import { Card, CardImg, CardHeader, CardText } from 'reactstrap'
+import { Card, CardImg, CardHeader } from 'reactstrap'
 
 const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 	const [{ canDrop, isOver }, drop] = useDrop({
@@ -19,28 +19,30 @@ const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 	} else if (canDrop) {
 		opacity = 1
 	}
+	const cardJSX = (
+		<Card>
+			<CardImg src={image} style={{ opacity }} />
 
-	return (
-		<div
-			ref={drop}
-			style={{ display: 'inline-block', width: 250, height: 350, padding: 5 }}
-		>
-			<Card
-				inverse
-				color={
-					(lastDroppedItem &&
-						(lastDroppedItem.name === name ? 'success' : 'danger')) ||
-					'primary'
-				}
-			>
-				<CardImg src={image} style={{ opacity }} />
+			{lastDroppedItem && (
+				<CardHeader className="text-center">{lastDroppedItem.name}</CardHeader>
+			)}
 
-				<CardHeader className="text-center">
-					{lastDroppedItem && lastDroppedItem.name}
-				</CardHeader>
+			{isActive && (
+				<CardHeader className="text-center">Release to drop.</CardHeader>
+			)}
+		</Card>
+	)
+	const divStyle = {
+		display: 'inline-block',
+		width: '33.3333%',
+		padding: 5
+	}
 
-				{isActive ? <CardText>Release to drop</CardText> : ''}
-			</Card>
+	return lastDroppedItem ? (
+		<div style={divStyle}>{cardJSX}</div>
+	) : (
+		<div ref={drop} style={divStyle}>
+			{cardJSX}
 		</div>
 	)
 }

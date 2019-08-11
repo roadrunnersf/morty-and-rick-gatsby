@@ -2,7 +2,7 @@ import React from 'react'
 import { arrMatches, arrWrong } from './../../utils'
 import { Progress } from 'reactstrap'
 
-const Score = ({ total, max, scorer }) => {
+const Score = ({ max, scorer }) => {
 	const score = arrMatches(scorer)
 	const wrong = arrWrong(scorer)
 

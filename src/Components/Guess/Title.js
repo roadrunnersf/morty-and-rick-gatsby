@@ -21,7 +21,7 @@ const Title = ({ name, type, isDropped }) => {
 	return (
 		<div ref={drag}>
 			{!isDropped && (
-				<Button color="primary" style={{ ...style, opacity }}>
+				<Button color="secondary" style={{ ...style, opacity }}>
 					{name}
 				</Button>
 			)}
