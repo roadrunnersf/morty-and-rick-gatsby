@@ -7,14 +7,14 @@ import NavBar from './../Components/Layout/NavBar'
 
 const Home = ({ data }) => {
 	return (
-		<div>
+		<>
 			<Helmet>
 				<title>Sam's Rick & Morty App</title>
 			</Helmet>
 
 			<NavBar />
 			<HomeBox characters={data.allCharacters.nodes} />
-		</div>
+		</>
 	)
 }
 

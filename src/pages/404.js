@@ -7,7 +7,7 @@ import NavBar from './../Components/Layout/NavBar'
 
 const Four0Four = ({ location }) => {
 	return (
-		<div>
+		<>
 			<NavBar />
 
 			<Jumbotron>
@@ -20,7 +20,7 @@ const Four0Four = ({ location }) => {
 					<Link to="/">Home</Link>
 				</Button>
 			</Jumbotron>
-		</div>
+		</>
 	)
 }
 

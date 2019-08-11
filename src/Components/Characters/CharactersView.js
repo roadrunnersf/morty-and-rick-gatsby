@@ -22,4 +22,3 @@ const CharactersView = ({ characters }) => {
 }
 
 export default CharactersView
-//<div  key={character.id} style={{ display: 'inline-block', padding: 5}}>

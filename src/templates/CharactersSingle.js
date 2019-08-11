@@ -7,7 +7,7 @@ import NavBar from './../Components/Layout/NavBar.js'
 const CharactersSingle = props => {
 	const character = props.pageContext
 	return (
-		<div>
+		<>
 			<Helmet>
 				<title>{character.name && character.name}</title>
 			</Helmet>
@@ -18,7 +18,7 @@ const CharactersSingle = props => {
 					linkURL={`/characters/${parseInt(character.id, 10) + 1}`}
 				/>
 			</div>
-		</div>
+		</>
 	)
 }
 

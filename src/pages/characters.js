@@ -15,14 +15,14 @@ const Characters = ({ data }) => {
 	}, [])
 
 	return (
-		<div>
+		<>
 			<Helmet>
 				<title>Character Viewer</title>
 			</Helmet>
 			<NavBar />
 
 			<CharactersView characters={characters} />
-		</div>
+		</>
 	)
 }
 
