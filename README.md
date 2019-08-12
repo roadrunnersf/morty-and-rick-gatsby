@@ -1,9 +1,16 @@
-1.  **Run dev server**
+1.  **Set up**
 
-    Navigate to site’s directory and start it up.
+    Clone the repo and then install.
 
     ```sh
-    cd gatsby_rick
+    git clone https://github.com/roadrunnersf/rick-morty-gatsby.git
+    cd rick-morty-gatsby
+    npm install
+    ```
+
+1.  **Run dev server**
+
+    ```sh
     gatsby develop
     ```
 
@@ -11,4 +18,4 @@
 
     The site is now running at `http://localhost:8000`
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`\_. This is a tool you can use to view the data on the graphql data layer.
+    \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to view the data on the graphql data layer.
