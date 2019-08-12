@@ -13,12 +13,13 @@ const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 		})
 	})
 	const isActive = canDrop && isOver
-	let opacity = 1
-	if (isActive) {
-		opacity = 0.8
+	let opacity // = 1
+	if (isActive || lastDroppedItem) {
+		opacity = 0.6
 	} else if (canDrop) {
 		opacity = 1
 	}
+
 	const cardJSX = (
 		<Card>
 			<CardImg src={image} style={{ opacity }} />

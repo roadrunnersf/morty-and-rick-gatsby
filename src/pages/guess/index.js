@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import update from 'immutability-helper'
 import { Container, Row, Col } from 'reactstrap'
 import { Helmet } from 'react-helmet'
@@ -7,13 +7,13 @@ import { DndProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import Pic from './../Components/Guess/Pic'
-import Title from './../Components/Guess/Title'
-import Score from './../Components/Guess/Score'
-import NavBar from './../Components/Layout/NavBar'
+import Pic from './../../Components/Guess/Pic'
+import Title from './../../Components/Guess/Title'
+import Score from './../../Components/Guess/Score'
+import NavBar from './../../Components/Layout/NavBar'
 
-import { shuffle } from './../utils'
-import ItemTypes from './../utils/ItemTypes'
+import { shuffle, arrOfObjectsNoFalsyValues } from './../../utils'
+import ItemTypes from './../../utils/ItemTypes'
 
 const Guess = ({ data }) => {
 	const [pics, setPics] = useState([])
@@ -70,6 +70,8 @@ const Guess = ({ data }) => {
 		)
 		setScorer(characters.map(o => ({ [o.name]: null })))
 	}, [])
+
+	scorer[0] && arrOfObjectsNoFalsyValues(scorer) && navigate('/guess/complete')
 
 	return (
 		<DndProvider backend={HTML5Backend}>

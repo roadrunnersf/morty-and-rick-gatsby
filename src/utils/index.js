@@ -92,13 +92,16 @@ const arrWrong = arr => {
 }
 
 const arrGuesses = arr => {
-	const keys = arrKeys(arr)
 	const values = arrVals(arr)
 	let counter = 0
 	for (var i = 0; i < arr.length; i++) {
 		values[i] && counter++
 	}
 	return counter
+}
+
+const arrOfObjectsNoFalsyValues = arr => {
+	return !arrVals(arr).some(i => !i)
 }
 
 export {
@@ -110,5 +113,6 @@ export {
 	arrVals,
 	arrMatches,
 	arrWrong,
-	arrGuesses
+	arrGuesses,
+	arrOfObjectsNoFalsyValues
 }

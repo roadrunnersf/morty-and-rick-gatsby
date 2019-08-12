@@ -1,12 +1,15 @@
 import React from 'react'
-import { arrMatches, arrWrong, arrGuesses } from './../../utils'
+import { navigate } from 'gatsby'
 import { Progress } from 'reactstrap'
+
+import { arrMatches, arrWrong, arrGuesses } from './../../utils'
 
 const Score = ({ max, scorer }) => {
 	const score = arrMatches(scorer)
 	const wrong = arrWrong(scorer)
-	const complete = arrGuesses(scorer) === max
-	console.log('complete: ', complete)
+	const guesses = arrGuesses(scorer)
+	const complete = max > 0 && guesses === max
+	complete && navigate('/guess/complete')
 
 	return (
 		<div>
@@ -34,12 +37,7 @@ const Score = ({ max, scorer }) => {
 						></Progress>
 					</>
 				) : (
-					<Progress
-						bar
-						animated
-						value={arrGuesses(scorer)}
-						max={max}
-					></Progress>
+					<Progress bar animated value={guesses} max={max}></Progress>
 				)}
 			</Progress>
 		</div>
