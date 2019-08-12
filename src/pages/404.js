@@ -3,13 +3,11 @@ import { Link } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Jumbotron, Button } from 'reactstrap'
 
-import NavBar from './../Components/Layout/NavBar'
+import Layout from './../Components/Layout'
 
 const Four0Four = ({ location }) => {
 	return (
-		<>
-			<NavBar />
-
+		<Layout helmet={'404'}>
 			<Jumbotron>
 				<h1 className="display-3">404</h1>
 				<hr className="my-2" />
@@ -20,7 +18,7 @@ const Four0Four = ({ location }) => {
 					<Link to="/">Home</Link>
 				</Button>
 			</Jumbotron>
-		</>
+		</Layout>
 	)
 }
 
