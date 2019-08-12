@@ -1,25 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import HomeBox from './../Components/Home/HomeBox'
-import NavBar from './../Components/Layout/NavBar'
+import Layout from './../Components/Layout'
 
 const Home = ({ data }) => {
 	return (
-		<>
-			<Helmet>
-				<title>Sam's Rick & Morty App</title>
-			</Helmet>
-
-			<NavBar />
+		<Layout helmet={"Sam's Rick & Morty App"}>
 			<HomeBox characters={data.allCharacters.nodes} />
-		</>
+		</Layout>
 	)
 }
 
-// filter(photo => photo.name.toLowerCase().includes("rick") && photo.name !== "Morty Jr's interviewer").
 export default Home
 
 export const query = graphql`

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import CharactersView from './../Components/Characters/CharactersView'
-import NavBar from './../Components/Layout/NavBar'
+import Layout from './../Components/Layout'
 
 import { randFromList } from './../utils/index'
 
@@ -16,14 +15,9 @@ const Characters = ({ data }) => {
 	}, [])
 
 	return (
-		<>
-			<Helmet>
-				<title>Character Viewer</title>
-			</Helmet>
-			<NavBar />
-
+		<Layout helmet={'Character Viewer'}>
 			<CharactersView characters={characters} />
-		</>
+		</Layout>
 	)
 }
 
