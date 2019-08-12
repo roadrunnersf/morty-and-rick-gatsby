@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { graphql } from 'gatsby'
 import update from 'immutability-helper'
 import { Container, Row, Col } from 'reactstrap'
 import { Helmet } from 'react-helmet'
