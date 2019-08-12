@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import CharactersView from './../Components/Characters/CharactersView'
 import NavBar from './../Components/Layout/NavBar'

@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { Helmet } from 'react-helmet'
 import { DndProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import Pic from './../Components/Guess/Pic'
 import Title from './../Components/Guess/Title'
