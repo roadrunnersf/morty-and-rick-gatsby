@@ -17,10 +17,11 @@ import ItemTypes from './../../utils/ItemTypes'
 const Guess = ({ data }) => {
 	const [pics, setPics] = useState([])
 	const [titles, setTitles] = useState([])
-
 	const [scorer, setScorer] = useState([])
-
 	const [droppedBoxTitles, setDroppedBoxTitles] = useState([])
+
+	const characters = data.allCharacters.nodes
+
 	function isDropped(boxTitle) {
 		return droppedBoxTitles.indexOf(boxTitle) > -1
 	}
@@ -52,8 +53,8 @@ const Guess = ({ data }) => {
 		},
 		[droppedBoxTitles, pics]
 	)
+
 	useEffect(() => {
-		const characters = data.allCharacters.nodes
 		setPics(
 			shuffle(characters).map(obj => ({
 				...obj,
@@ -71,7 +72,9 @@ const Guess = ({ data }) => {
 	}, [])
 
 	// Navigate to complete page if all pics have matches
-	scorer[0] && arrOfObjectsNoFalsyValues(scorer) && navigate('/guess/complete')
+	scorer[0] &&
+		arrOfObjectsNoFalsyValues(scorer) &&
+		navigate('/guess/complete', { state: { scorer, characters } })
 
 	return (
 		<DndProvider backend={HTML5Backend}>
@@ -105,7 +108,7 @@ const Guess = ({ data }) => {
 					</Row>
 					<Row>
 						<Col>
-							<Score scorer={scorer} total={6} max={pics.length} />
+							<Score scorer={scorer} max={pics.length} />
 						</Col>
 					</Row>
 				</Container>

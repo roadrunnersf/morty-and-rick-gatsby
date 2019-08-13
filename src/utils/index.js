@@ -104,6 +104,19 @@ const arrOfObjectsNoFalsyValues = arr => {
 	return !arrVals(arr).some(i => !i)
 }
 
+const addMatches = (scorer, characters) => {
+	const scorKeys = arrKeys(scorer)
+	const scorVals = arrVals(scorer)
+	characters.forEach(obj => {
+		for (var i = 0; i < scorKeys.length; i++) {
+			if (obj.name === scorKeys[i]) {
+				obj.match = scorVals[i]
+			}
+		}
+	})
+	return characters
+}
+
 export {
 	randList,
 	randFromList,
@@ -114,5 +127,6 @@ export {
 	arrMatches,
 	arrWrong,
 	arrGuesses,
-	arrOfObjectsNoFalsyValues
+	arrOfObjectsNoFalsyValues,
+	addMatches
 }
