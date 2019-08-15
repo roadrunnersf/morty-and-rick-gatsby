@@ -6,12 +6,14 @@ import { Card, CardImg, CardText, CardBody, CardHeader } from 'reactstrap'
 //import ContentLoader from "react-content-loader";
 
 const CharactersViewCard = ({ character, linkURL }) => (
-	<Card outline color="secondary" style={{ width: '100%', margin: 14 }}>
+	<Card outline color="secondary" style={{ width: '100%' }}>
 		<Link to={linkURL}>
 			<CardImg src={character.image} />
 		</Link>
 
-		<CardHeader tag="h6">{character.name}</CardHeader>
+		<CardHeader tag="h6" style={{ padding: '6px 6px', textAlign: 'center' }}>
+			{character.name}
+		</CardHeader>
 		<CardBody>
 			<CardText>Species: {character.species}</CardText>
 			<CardText>Gender: {character.gender}</CardText>
