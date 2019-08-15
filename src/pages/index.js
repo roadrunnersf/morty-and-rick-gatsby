@@ -1,11 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import HomeBox from './../Components/Home/HomeBox'
 import Layout from './../Components/Layout'
 
-const Home = ({ data }) => {
+const Home = ({data}) => {
 	return (
 		<Layout helmet={"Sam's Rick & Morty App"}>
 			<HomeBox characters={data.allCharacters.nodes} />

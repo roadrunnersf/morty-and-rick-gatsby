@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { graphql } from 'gatsby'
+import React, {useState, useEffect, useCallback} from 'react'
+import {graphql} from 'gatsby'
 import update from 'immutability-helper'
-import { DndProvider } from 'react-dnd'
+import {DndProvider} from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -13,11 +13,11 @@ import {
 	randFromList,
 	arrScore,
 	arrWrong,
-	picsComplete
+	picsComplete,
 } from './../../utils'
 import ItemTypes from './../../utils/ItemTypes'
 
-const Guess = ({ data }) => {
+const Guess = ({data}) => {
 	const [pics, setPics] = useState([1, 1]) //this is needed so that pics can still be used before it is updated in useEffect
 	const [titles, setTitles] = useState([])
 	const [droppedBoxTitles, setDroppedBoxTitles] = useState([])
@@ -29,17 +29,17 @@ const Guess = ({ data }) => {
 
 	const handleDrop = useCallback(
 		(index, item) => {
-			const { name } = item
+			const {name} = item
 			setDroppedBoxTitles(
-				update(droppedBoxTitles, name ? { $push: [name] } : { $push: [] })
+				update(droppedBoxTitles, name ? {$push: [name]} : {$push: []})
 			)
 			setPics(
 				update(pics, {
 					[index]: {
 						lastDroppedItem: {
-							$set: item
-						}
-					}
+							$set: item,
+						},
+					},
 				})
 			)
 		},
@@ -51,14 +51,14 @@ const Guess = ({ data }) => {
 			shuffle(characters).map(obj => ({
 				...obj,
 				accepts: ItemTypes.TITLE,
-				lastDroppedItem: null
+				lastDroppedItem: null,
 			}))
 		)
 		setTitles(
 			characters
 				.slice()
 				.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
-				.map(obj => ({ ...obj, type: ItemTypes.TITLE }))
+				.map(obj => ({...obj, type: ItemTypes.TITLE}))
 		)
 	}, [])
 

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
+import React, {useState, useEffect} from 'react'
+import {graphql} from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import CharactersView from './../Components/Characters/CharactersView'
 import Layout from './../Components/Layout'
 
-import { randFromList } from './../utils/index'
+import {randFromList} from './../utils/index'
 
-const Characters = ({ data }) => {
+const Characters = ({data}) => {
 	const [characters, setCharacters] = useState([])
 
 	useEffect(() => {

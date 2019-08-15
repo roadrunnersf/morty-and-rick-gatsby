@@ -1,7 +1,7 @@
 const path = require('path')
 
-exports.createPages = async ({ graphql, actions }) => {
-	const { createPage } = actions
+exports.createPages = async ({graphql, actions}) => {
+	const {createPage} = actions
 	const CharactersSingle = path.resolve('src/templates/CharactersSingle.js')
 
 	const pages = await graphql(`
@@ -31,8 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
 				image: node.image,
 				species: node.species,
 				gender: node.gender,
-				status: node.status
-			} // This is to pass data as props to your component.
+				status: node.status,
+			}, // This is to pass data as props to your component.
 		})
 	})
 }

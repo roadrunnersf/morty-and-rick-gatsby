@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Jumbotron, Button } from 'reactstrap'
+import {Jumbotron, Button} from 'reactstrap'
 
 import Layout from './../Components/Layout'
 
-const Four0Four = ({ location }) => {
+const Four0Four = ({location}) => {
 	return (
 		<Layout helmet={'404'}>
 			<Jumbotron>

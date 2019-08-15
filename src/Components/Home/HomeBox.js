@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Jumbotron, Button, Container } from 'reactstrap'
+import {Link} from 'gatsby'
+import {Jumbotron, Button, Container} from 'reactstrap'
 
 const HomeBox = () => {
 	return (

@@ -1,7 +1,7 @@
 // LIST GENERATION AND MANIPULATION
 
 const integerList = (start, length) => {
-	return Array.from({ length: length }, (v, k) => k + start)
+	return Array.from({length: length}, (v, k) => k + start)
 }
 
 const randList = (numMax, outputLength) => {
@@ -167,5 +167,5 @@ export {
 	addMatches,
 	arrScore,
 	arrLDITotal,
-	picsComplete
+	picsComplete,
 }

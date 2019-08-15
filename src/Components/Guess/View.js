@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import {Container, Row, Col} from 'reactstrap'
 
 import Pic from './Pic'
 import Title from './Title'
@@ -12,7 +12,7 @@ const GuessView = ({
 	score,
 	wrong,
 	handleDrop,
-	droppedBoxTitles
+	droppedBoxTitles,
 }) => {
 	function isDropped(boxTitle) {
 		return droppedBoxTitles.indexOf(boxTitle) > -1
@@ -23,7 +23,7 @@ const GuessView = ({
 			<Container>
 				<Row>
 					<Col xs="10">
-						{pics.map(({ accepts, lastDroppedItem, image, name }, index) => (
+						{pics.map(({accepts, lastDroppedItem, image, name}, index) => (
 							<Pic
 								image={image}
 								name={name}
@@ -35,7 +35,7 @@ const GuessView = ({
 						))}
 					</Col>
 					<Col xs="2">
-						{titles.map(({ name, type }, index) => (
+						{titles.map(({name, type}, index) => (
 							<Row key={index}>
 								<Title
 									name={name}

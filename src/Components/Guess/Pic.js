@@ -1,16 +1,16 @@
 import React from 'react'
-import { useDrop } from 'react-dnd'
+import {useDrop} from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
-import { Card, CardImg, CardHeader } from 'reactstrap'
+import {Card, CardImg, CardHeader} from 'reactstrap'
 
-const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
-	const [{ canDrop, isOver }, drop] = useDrop({
+const Pic = ({image, name, accept, lastDroppedItem, onDrop}) => {
+	const [{canDrop, isOver}, drop] = useDrop({
 		accept: ItemTypes.TITLE,
 		drop: onDrop,
 		collect: monitor => ({
 			isOver: monitor.isOver(),
-			canDrop: monitor.canDrop()
-		})
+			canDrop: monitor.canDrop(),
+		}),
 	})
 	const isActive = canDrop && isOver
 	let opacity // = 1
@@ -22,7 +22,7 @@ const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 
 	const cardJSX = (
 		<Card>
-			<CardImg src={image} style={{ opacity }} />
+			<CardImg src={image} style={{opacity}} />
 
 			{lastDroppedItem && (
 				<CardHeader className="text-center">{lastDroppedItem.name}</CardHeader>
@@ -36,7 +36,7 @@ const Pic = ({ image, name, accept, lastDroppedItem, onDrop }) => {
 	const divStyle = {
 		display: 'inline-block',
 		width: '33.3333%',
-		padding: 5
+		padding: 5,
 	}
 
 	return !lastDroppedItem ? (

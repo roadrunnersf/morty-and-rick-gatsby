@@ -1,9 +1,9 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import {Container, Row, Col} from 'reactstrap'
 
 import CharactersViewCard from './CharactersViewCard'
 
-const CharactersView = ({ characters }) => {
+const CharactersView = ({characters}) => {
 	return (
 		<Container>
 			<Row>
@@ -15,8 +15,7 @@ const CharactersView = ({ characters }) => {
 						lg="3"
 						xl="3"
 						key={character.id}
-						style={{ padding: '6px 6px' }}
-					>
+						style={{padding: '6px 6px'}}>
 						<CharactersViewCard
 							key={character.id}
 							character={character}
