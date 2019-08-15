@@ -6,7 +6,7 @@
 
     Clone the repo and then install.
 
-    ```sh
+    ```
     git clone https://github.com/roadrunnersf/rick-morty-gatsby.git
     cd rick-morty-gatsby
     npm install
@@ -14,9 +14,13 @@
 
 1.  **Run dev server**
 
-    ```sh
-    gatsby develop
-    ```
+    Install gatsby command line interface: for local use:
+
+    `npm install -g gatsby-cli`
+
+    Then run the development server:
+
+    `gatsby develop`
 
 1.  **View site in browser**
 
