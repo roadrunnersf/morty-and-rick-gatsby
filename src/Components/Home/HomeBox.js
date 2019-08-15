@@ -5,16 +5,20 @@ import {Jumbotron, Button, Container} from 'reactstrap'
 const HomeBox = () => {
 	return (
 		<Container>
-			<Jumbotron>
+			<Jumbotron style={{padding: '32px 32px'}}>
 				<h1 className="display-3">Welcome to Sam's Rick & Morty App</h1>
-				<p className="lead">This is a brief explanation of the site</p>
-				<hr className="my-2" />
-				<p>Click below to go to the characters page </p>
+				<p className="lead">School yourself using the characters page.</p>
 				<p className="lead">
-					<Link to="/characters/">
-						<Button color="primary">Characters</Button>
-					</Link>
+					When you're ready, play the Guessing Game to put your Rick & Morty
+					character knowledge to the test!
 				</p>
+				<hr className="my-2" />
+				<Link to="/characters/" style={{margin: '3px'}}>
+					<Button color="primary">Characters</Button>
+				</Link>
+				<Link to="/guess/" style={{margin: '3px'}}>
+					<Button color="primary">Guessing Game</Button>
+				</Link>
 			</Jumbotron>
 		</Container>
 	)
