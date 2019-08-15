@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`,
+		title: `Sams Rick & Morty App`,
+		description: `School yourself using the characters page. When you're ready, play the Guessing Game to put your Rick & Morty character knowledge to the test!`,
+		author: `roadrunnersf`,
 	},
 	plugins: [
 		'characters',
