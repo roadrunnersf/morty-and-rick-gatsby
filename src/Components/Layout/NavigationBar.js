@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 const NavigationBar = () => (
 	<Navbar color="dark" dark expand="xs">
-		<NavbarBrand>
+		<NavbarBrand tag="div">
 			<Link style={{ color: '#999999' }} to="/">
 				{String.raw`<RickAndMorty />`}
 			</Link>
@@ -13,12 +13,12 @@ const NavigationBar = () => (
 		<Nav className="ml-auto" navbar>
 			<NavItem>
 				<Link to="/characters">
-					<NavLink>Characters</NavLink>
+					<NavLink tag="div">Characters</NavLink>
 				</Link>
 			</NavItem>
 			<NavItem>
 				<Link to="/guess">
-					<NavLink>Guesser</NavLink>
+					<NavLink tag="div">Guesser</NavLink>
 				</Link>
 			</NavItem>
 		</Nav>
