@@ -81,15 +81,16 @@ const arrMatches = arr => {
 	}
 	return counter
 }
-const arrWrong = arr => {
-	const keys = arrKeys(arr)
-	const values = arrVals(arr)
-	let counter = 0
-	for (var i = 0; i < arr.length; i++) {
-		values[i] && keys[i] !== values[i] && counter++
-	}
-	return counter
-}
+
+// const arrWrongOLD = arr => {
+// 	const keys = arrKeys(arr)
+// 	const values = arrVals(arr)
+// 	let counter = 0
+// 	for (var i = 0; i < arr.length; i++) {
+// 		values[i] && keys[i] !== values[i] && counter++
+// 	}
+// 	return counter
+// }
 
 const arrGuesses = arr => {
 	const values = arrVals(arr)
@@ -101,7 +102,8 @@ const arrGuesses = arr => {
 }
 
 const arrOfObjectsNoFalsyValues = arr => {
-	return !arrVals(arr).some(i => !i)
+	return arr[0] ? !arrVals(arr).some(i => !i) : false
+	// return !arrVals(arr).some(i => !i)
 }
 
 const addMatches = (scorer, characters) => {
@@ -117,6 +119,39 @@ const addMatches = (scorer, characters) => {
 	return characters
 }
 
+const arrScore = arr => {
+	let counter = 0
+	for (var i = 0; i < arr.length; i++) {
+		arr[i].lastDroppedItem &&
+			arr[i].name === arr[i].lastDroppedItem.name &&
+			counter++
+	}
+	return counter
+}
+const arrWrong = arr => {
+	let counter = 0
+	for (var i = 0; i < arr.length; i++) {
+		arr[i].lastDroppedItem &&
+			arr[i].name !== arr[i].lastDroppedItem.name &&
+			counter++
+	}
+	return counter
+}
+
+const arrLDITotal = arr => {
+	let counter = 0
+	for (var i = 0; i < arr.length; i++) {
+		arr[i].lastDroppedItem &&
+			arr[i].name !== arr[i].lastDroppedItem.name &&
+			counter++
+	}
+	return counter
+}
+
+const picsComplete = arr => {
+	return !arr.every(obj => obj.lastDroppedItem)
+}
+
 export {
 	randList,
 	randFromList,
@@ -125,8 +160,12 @@ export {
 	arrKeys,
 	arrVals,
 	arrMatches,
+	// arrWrongOLD,
 	arrWrong,
 	arrGuesses,
 	arrOfObjectsNoFalsyValues,
-	addMatches
+	addMatches,
+	arrScore,
+	arrLDITotal,
+	picsComplete
 }

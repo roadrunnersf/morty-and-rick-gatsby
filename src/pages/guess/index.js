@@ -1,30 +1,32 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { graphql, navigate } from 'gatsby'
+import { graphql } from 'gatsby'
 import update from 'immutability-helper'
-import { Container, Row, Col } from 'reactstrap'
 import { DndProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import Pic from './../../Components/Guess/Pic'
-import Title from './../../Components/Guess/Title'
-import Score from './../../Components/Guess/Score'
-import Layout from './../../Components/Layout'
+import GuessView from './../../Components/Guess/View'
+import Complete from './../../Components/Guess/Complete'
 
-import { shuffle, arrOfObjectsNoFalsyValues } from './../../utils'
+import {
+	shuffle,
+	randFromList,
+	arrScore,
+	arrWrong,
+	picsComplete
+} from './../../utils'
 import ItemTypes from './../../utils/ItemTypes'
 
 const Guess = ({ data }) => {
-	const [pics, setPics] = useState([])
+	const [pics, setPics] = useState([1, 1]) //this is needed so that pics can still be used before it is updated in useEffect
 	const [titles, setTitles] = useState([])
-	const [scorer, setScorer] = useState([])
 	const [droppedBoxTitles, setDroppedBoxTitles] = useState([])
 
-	const characters = data.allCharacters.nodes
+	const [score, setScore] = useState(undefined)
+	const [wrong, setWrong] = useState(undefined)
 
-	function isDropped(boxTitle) {
-		return droppedBoxTitles.indexOf(boxTitle) > -1
-	}
+	let characters = randFromList(data.allCharacters.nodes, 6)
+
 	const handleDrop = useCallback(
 		(index, item) => {
 			const { name } = item
@@ -37,16 +39,6 @@ const Guess = ({ data }) => {
 						lastDroppedItem: {
 							$set: item
 						}
-					}
-				})
-			)
-
-			setScorer(prevState =>
-				prevState.map(obj => {
-					if (obj.hasOwnProperty(pics[index].name)) {
-						return { [pics[index].name]: item.name }
-					} else {
-						return obj
 					}
 				})
 			)
@@ -68,51 +60,28 @@ const Guess = ({ data }) => {
 				.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
 				.map(obj => ({ ...obj, type: ItemTypes.TITLE }))
 		)
-		setScorer(characters.map(o => ({ [o.name]: null })))
 	}, [])
 
-	// Navigate to complete page if all pics have matches
-	scorer[0] &&
-		arrOfObjectsNoFalsyValues(scorer) &&
-		navigate('/guess/complete', { state: { scorer, characters } })
+	useEffect(() => {
+		// score updates every time there is a change to pics
+		pics && setScore(arrScore(pics))
+		pics && setWrong(arrWrong(pics))
+	}, [pics])
 
 	return (
 		<DndProvider backend={HTML5Backend}>
-			<Layout helmet={'Character Guesser'}>
-				<Container>
-					<Row>
-						<Col xs="10">
-							{pics.map(({ accepts, lastDroppedItem, image, name }, index) => (
-								<Pic
-									image={image}
-									name={name}
-									accept={accepts}
-									lastDroppedItem={lastDroppedItem}
-									onDrop={item => handleDrop(index, item)}
-									key={index}
-								/>
-							))}
-						</Col>
-						<Col xs="2">
-							{titles.map(({ name, type }, index) => (
-								<Row key={index}>
-									<Title
-										name={name}
-										type={type}
-										isDropped={isDropped(name)}
-										key={index}
-									/>
-								</Row>
-							))}
-						</Col>
-					</Row>
-					<Row>
-						<Col>
-							<Score scorer={scorer} max={pics.length} />
-						</Col>
-					</Row>
-				</Container>
-			</Layout>
+			{picsComplete(pics) ? (
+				<GuessView
+					pics={pics}
+					titles={titles}
+					score={score}
+					wrong={wrong}
+					handleDrop={handleDrop}
+					droppedBoxTitles={droppedBoxTitles}
+				/>
+			) : (
+				<Complete pics={pics} max={pics.length} score={score} wrong={wrong} />
+			)}
 		</DndProvider>
 	)
 }
@@ -121,7 +90,7 @@ export default Guess
 
 export const query = graphql`
 	query GuessQuery {
-		allCharacters(limit: 6) {
+		allCharacters {
 			nodes {
 				id
 				name
