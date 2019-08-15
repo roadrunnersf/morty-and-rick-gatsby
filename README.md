@@ -1,4 +1,8 @@
-1.  **Set up**
+1.  **View the site**
+
+    The master branch is auto-deployed to [MortyAndRick.netlify.com](https://mortyandrick.netlify.com)
+
+1.  **Set up for local use**
 
     Clone the repo and then install.
 
