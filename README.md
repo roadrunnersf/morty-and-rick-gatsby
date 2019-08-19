@@ -27,3 +27,18 @@
     The site is now running at `http://localhost:8000`
 
     \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to view the data on the graphql data layer.
+
+1.  **Storybook**
+
+    Install Storybook if needed:
+
+    ```
+    npm install -g @storybook/cli
+    sb init
+    ```
+
+    Then you can run Storybook on `http://localhost:6006` using:
+
+    ```
+    npm run storybook
+    ```
