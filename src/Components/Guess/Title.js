@@ -1,14 +1,6 @@
 import React from 'react'
 import {useDrag} from 'react-dnd'
-import {Button} from 'reactstrap'
-
-const style = {
-	padding: '0.5rem 1rem',
-	marginRight: '0.5rem',
-	marginTop: '0.5rem',
-	cursor: 'move',
-	float: 'left',
-}
+import Button from '../buttons'
 
 const Title = ({name, type, isDropped}) => {
 	const [{opacity}, drag] = useDrag({
@@ -19,11 +11,7 @@ const Title = ({name, type, isDropped}) => {
 	})
 	return (
 		<div ref={drag}>
-			{!isDropped && (
-				<Button color="secondary" style={{...style, opacity}}>
-					{name}
-				</Button>
-			)}
+			{!isDropped && <Button style={{opacity}}>{name}</Button>}
 		</div>
 	)
 }
