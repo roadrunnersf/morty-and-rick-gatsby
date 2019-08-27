@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import {Card, CardImg, CardText, CardBody, CardHeader} from 'reactstrap'
+import {Card, CardHeader, CardImg, CardBody, CardText} from '../cards/index'
 
 //import ContentLoader from "react-content-loader";
 
@@ -11,9 +11,7 @@ const CharactersViewCard = ({character, linkURL}) => (
 			<CardImg src={character.image} />
 		</Link>
 
-		<CardHeader tag="h6" style={{padding: '6px 6px', textAlign: 'center'}}>
-			{character.name}
-		</CardHeader>
+		<CardHeader strong>{character.name}</CardHeader>
 		<CardBody>
 			<CardText>Species: {character.species}</CardText>
 			<CardText>Gender: {character.gender}</CardText>

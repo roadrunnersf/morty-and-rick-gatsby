@@ -1,9 +1,10 @@
 import React from 'react'
 import {useDrop} from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
-import {Card, CardImg, CardHeader} from 'reactstrap'
 
-const Pic = ({image, name, accept, lastDroppedItem, onDrop}) => {
+import {Card, CardHeader, CardImg} from '../cards/index'
+
+const Pic = ({image, lastDroppedItem, onDrop}) => {
 	const [{canDrop, isOver}, drop] = useDrop({
 		accept: ItemTypes.TITLE,
 		drop: onDrop,
@@ -24,13 +25,9 @@ const Pic = ({image, name, accept, lastDroppedItem, onDrop}) => {
 		<Card>
 			<CardImg src={image} style={{opacity}} />
 
-			{lastDroppedItem && (
-				<CardHeader className="text-center">{lastDroppedItem.name}</CardHeader>
-			)}
+			{lastDroppedItem && <CardHeader>{lastDroppedItem.name}</CardHeader>}
 
-			{isActive && (
-				<CardHeader className="text-center">Release to drop.</CardHeader>
-			)}
+			{isActive && <CardHeader>Release to drop.</CardHeader>}
 		</Card>
 	)
 	const divStyle = {

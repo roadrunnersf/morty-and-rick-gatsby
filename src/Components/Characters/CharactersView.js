@@ -15,7 +15,7 @@ const CharactersView = ({characters}) => {
 						lg="3"
 						xl="3"
 						key={character.id}
-						style={{padding: '6px 6px'}}>
+						style={{padding: '9px 9px'}}>
 						<CharactersViewCard
 							key={character.id}
 							character={character}

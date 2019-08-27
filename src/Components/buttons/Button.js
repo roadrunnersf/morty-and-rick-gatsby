@@ -1,8 +1,5 @@
-import React from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import {FONT, BLUE, BLUE_LIGHTER} from '../../config/styles'
-
-const EASE_IN_OUT = '140ms ease-in-out'
 
 const Button = styled.button`
 	font-family: ${FONT};
@@ -33,7 +30,7 @@ const Button = styled.button`
 			border-color: ${BLUE_LIGHTER};
 			box-shadow: 0 0 40px 40px ${BLUE_LIGHTER} inset;
 		}
-		transition: box-shadow ${EASE_IN_OUT}, background-color ${EASE_IN_OUT}, border-color ${EASE_IN_OUT};
+		transition: all 160ms ease-in-out
 		`}
 `
 export default Button
