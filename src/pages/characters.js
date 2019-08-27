@@ -12,7 +12,7 @@ const Characters = ({data}) => {
 
 	useEffect(() => {
 		setCharacters(randFromList(data.allCharacters.nodes, 20))
-	}, [])
+	}, [data.allCharacters.nodes])
 
 	return (
 		<Layout helmet={'Character Viewer'}>
