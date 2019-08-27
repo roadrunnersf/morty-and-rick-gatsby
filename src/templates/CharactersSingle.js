@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
 
 import CharactersViewCard from './../Components/Characters/CharactersViewCard'
 import Layout from './../Components/Layout'
