@@ -7,7 +7,7 @@ storiesOf('Card/', module).add('Card Full', () => (
 	<div style={{width: 285}}>
 		<Card>
 			<CardImg src="https://rickandmortyapi.com/api/character/avatar/172.jpeg" />
-			<CardHeader>Character</CardHeader>
+			<CardHeader strong>Character</CardHeader>
 			<CardBody>
 				<CardText>Name: Sam Samson</CardText>
 				<CardText>Gender: Male</CardText>

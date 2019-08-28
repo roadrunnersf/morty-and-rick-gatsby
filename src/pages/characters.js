@@ -4,7 +4,7 @@ import {graphql} from 'gatsby'
 import CharactersView from './../Components/Characters/CharactersView'
 import Layout from './../Components/Layout'
 
-import {randFromList} from './../utils/index'
+import {randFromList} from './../utils'
 
 const Characters = ({data}) => {
 	const [characters, setCharacters] = useState([])

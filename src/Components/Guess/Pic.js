@@ -2,7 +2,7 @@ import React from 'react'
 import {useDrop} from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
 
-import {Card, CardHeader, CardImg} from '../cards/index'
+import {Card, CardImg, CardHeader} from '../cards'
 
 const Pic = ({image, lastDroppedItem, onDrop}) => {
 	const [{canDrop, isOver}, drop] = useDrop({
@@ -14,7 +14,7 @@ const Pic = ({image, lastDroppedItem, onDrop}) => {
 		}),
 	})
 	const isActive = canDrop && isOver
-	let opacity // = 1
+	let opacity
 	if (isActive || lastDroppedItem) {
 		opacity = 0.6
 	} else if (canDrop) {

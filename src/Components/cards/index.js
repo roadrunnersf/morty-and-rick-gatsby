@@ -1,7 +1,3 @@
-import Card from './Card'
-import CardHeader from './CardHeader'
-import CardImg from './CardImg'
-import CardText from './CardText'
-import CardBody from './CardBody'
+import {Card, CardHeader, CardImg, CardText, CardBody} from './Card'
 
 export {Card, CardHeader, CardImg, CardText, CardBody}
