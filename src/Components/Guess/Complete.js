@@ -29,7 +29,10 @@ const Complete = ({pics, max, score, wrong}) => {
 												name === lastDroppedItem.name ? 'success' : 'danger'
 											}
 											style={{width: '100%'}}>
-											<CardImg src={image} />
+											<CardImg
+												src={image}
+												alt={`Correct name: ${name}, Dropped name: ${lastDroppedItem.name}`}
+											/>
 											<CardHeader style={{padding: '6px 6px'}}>
 												{name === lastDroppedItem.name
 													? lastDroppedItem.name

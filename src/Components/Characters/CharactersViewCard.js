@@ -8,7 +8,7 @@ import {Card, CardHeader, CardImg, CardBody, CardText} from '../cards'
 const CharactersViewCard = ({character, linkURL}) => (
 	<Card outline color="secondary" style={{width: '100%'}}>
 		<Link to={linkURL}>
-			<CardImg src={character.image} />
+			<CardImg src={character.image} alt={character.name} />
 		</Link>
 
 		<CardHeader strong>{character.name}</CardHeader>
