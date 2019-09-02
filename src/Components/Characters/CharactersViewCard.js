@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import {Card, CardHeader, CardImg, CardBody, CardText} from '../cards'
+import {Card, CardHeader, CardImg, CardBody, CardText} from '../elements/cards'
 
 //import ContentLoader from "react-content-loader";
 

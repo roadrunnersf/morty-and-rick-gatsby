@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {FONT, BLUE, BLUE_LIGHTER} from '../../config/styles'
+import {FONT, BLUE, BLUE_LIGHTER} from '../../../config/styles'
 
 const Button = styled.button`
 	font-family: ${FONT};

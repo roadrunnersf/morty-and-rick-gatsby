@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {FONT} from '../../config/styles'
+import {FONT, GREEN, RED} from '../../../config/styles'
 
 export const Card = styled.div`
 	position: relative;
@@ -16,6 +16,18 @@ export const Card = styled.div`
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	}
 	transition: all 200ms ease-in-out;
+	${props =>
+		props.success &&
+		`
+		background-color: ${GREEN};
+		color: white;
+		`};
+	${props =>
+		props.danger &&
+		`
+		background-color: ${RED};
+		color: white;
+		`};
 `
 
 export const CardImg = styled.img`

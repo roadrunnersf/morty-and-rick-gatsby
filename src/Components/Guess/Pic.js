@@ -2,7 +2,7 @@ import React from 'react'
 import {useDrop} from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
 
-import {Card, CardImg, CardHeader} from '../cards'
+import {Card, CardImg, CardHeader} from '../elements/cards'
 
 const Pic = ({image, lastDroppedItem, onDrop}) => {
 	const [{canDrop, isOver}, drop] = useDrop({
