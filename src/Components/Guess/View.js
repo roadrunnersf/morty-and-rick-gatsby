@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Row, Col} from 'reactstrap'
+import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 
 import Pic from './Pic'
 import Title from './Title'
@@ -20,9 +20,9 @@ const GuessView = ({
 
 	return (
 		<Layout helmet={'Character Guesser'}>
-			<Container>
+			<Grid>
 				<Row>
-					<Col xs="10">
+					<Col xs={10}>
 						{pics.map(({accepts, lastDroppedItem, image, name}, index) => (
 							<Pic
 								image={image}
@@ -34,7 +34,7 @@ const GuessView = ({
 							/>
 						))}
 					</Col>
-					<Col xs="2">
+					<Col xs={2}>
 						{titles.map(({name, type}, index) => (
 							<Row key={index}>
 								<Title
@@ -48,11 +48,11 @@ const GuessView = ({
 					</Col>
 				</Row>
 				<Row>
-					<Col>
+					<Col xs={10}>
 						<Score pics={pics} max={pics.length} score={score} wrong={wrong} />
 					</Col>
 				</Row>
-			</Container>
+			</Grid>
 		</Layout>
 	)
 }
