@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import GuessView from './../../Components/Guess/View'
 import Complete from './../../Components/Guess/Complete'
 
+import ItemTypes from './../../utils/ItemTypes'
 import {
 	shuffle,
 	randFromList,
@@ -15,7 +16,6 @@ import {
 	arrWrong,
 	picsComplete,
 } from './../../utils'
-import ItemTypes from './../../utils/ItemTypes'
 
 const Guess = ({data}) => {
 	const [pics, setPics] = useState([1, 1]) //this is needed so that pics can still be used before it is updated in useEffect

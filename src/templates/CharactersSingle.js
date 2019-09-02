@@ -10,7 +10,7 @@ const CharactersSingle = props => {
 			<div style={{width: 250}}>
 				<CharactersViewCard
 					character={character}
-					linkURL={`/characters/${parseInt(character.id, 10) + 1}`}
+					linkURL={`/characters/${parseInt(character.id, 10) + 1}/`}
 				/>
 			</div>
 		</Layout>

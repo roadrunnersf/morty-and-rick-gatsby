@@ -19,9 +19,7 @@ const HomeBox = () => {
 					<Button animate>Characters</Button>
 				</Link>
 				<Link to="/guess/">
-					<Button animate color="primary">
-						Guessing Game
-					</Button>
+					<Button animate>Guessing Game</Button>
 				</Link>
 			</Jumbotron>
 		</Container>

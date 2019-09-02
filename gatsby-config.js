@@ -20,8 +20,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
+				name: `morty-and-rick-gatsby`,
+				short_name: `morty-rick`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,

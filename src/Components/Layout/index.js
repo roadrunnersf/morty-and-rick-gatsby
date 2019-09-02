@@ -5,9 +5,7 @@ import NavigationBar from './NavigationBar.js'
 
 const Layout = ({children, helmet}) => (
 	<>
-		<Helmet>
-			<title>{helmet}</title>
-		</Helmet>
+		<Helmet title={helmet} />
 
 		<NavigationBar />
 
