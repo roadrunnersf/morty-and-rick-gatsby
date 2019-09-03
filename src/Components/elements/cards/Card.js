@@ -37,9 +37,10 @@ export const CardImg = styled.img`
 
 export const CardHeader = styled.h6`
 	font-family: ${FONT};
-	width: 100%;
 	font-weight: ${props => (props.strong ? 500 : 400)};
+	font-size: 1em;
 	text-align: center;
+	width: 100%;
 	padding: 14px 6px;
 	margin: 0px;
 	background-color: rgba(0, 0, 0, 0.03);
@@ -57,5 +58,5 @@ export const CardText = styled.p`
 	font-size: 0.9em;
 	text-align: left;
 	padding: 0px;
-	margin-bottom: 0.55rem;
+	margin-bottom: 0.55em;
 `
