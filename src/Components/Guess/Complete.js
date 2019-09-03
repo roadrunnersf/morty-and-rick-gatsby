@@ -1,39 +1,31 @@
 import React from 'react'
-import {
-	Jumbotron,
-	Container,
-	Card,
-	CardImg,
-	CardHeader,
-	Row,
-	Col,
-	Progress,
-} from 'reactstrap'
+import {Progress} from 'reactstrap'
+import {Grid, Row, Col} from 'react-styled-flexboxgrid'
 
+import {Card, CardImg, CardHeader} from '../elements/cards'
+import {Jumbotron} from '../elements/jumbotron'
 import Layout from './../Layout'
 
 const Complete = ({pics, max, score, wrong}) => {
 	return (
 		<Layout helmet={'Guessing Complete!'}>
-			<Container>
+			<Grid>
 				<Jumbotron style={{paddingTop: '1rem'}}>
 					<Row>
-						<Col xs="0" lg="1"></Col>
-						<Col xs="12" lg="10">
+						<Col xs={0} lg={1}></Col>
+						<Col xs={12} lg={10}>
 							<Row>
-								{pics.map(({name, lastDroppedItem, image, id}, index) => (
-									<Col key={id} sm="6" md="4" style={{padding: '7px'}}>
+								{pics.map(({name, lastDroppedItem, image, id}) => (
+									<Col key={id} sm={6} md={4} style={{padding: '7px'}}>
 										<Card
-											inverse
-											color={
-												name === lastDroppedItem.name ? 'success' : 'danger'
-											}
+											success={name === lastDroppedItem.name ? true : undefined}
+											danger={name !== lastDroppedItem.name ? true : undefined}
 											style={{width: '100%'}}>
 											<CardImg
 												src={image}
 												alt={`Correct name: ${name}, Dropped name: ${lastDroppedItem.name}`}
 											/>
-											<CardHeader style={{padding: '6px 6px'}}>
+											<CardHeader>
 												{name === lastDroppedItem.name
 													? lastDroppedItem.name
 													: `Correct answer: ${name}`}
@@ -43,7 +35,7 @@ const Complete = ({pics, max, score, wrong}) => {
 								))}
 							</Row>
 							<Row>
-								<Col style={{padding: '7px'}}>
+								<Col xs={12} style={{padding: '7px'}}>
 									<p></p>
 									<div className="text-center">
 										{score} of {max}
@@ -66,10 +58,10 @@ const Complete = ({pics, max, score, wrong}) => {
 								</Col>
 							</Row>
 						</Col>
-						<Col xs="0" lg="1"></Col>
+						<Col xs={0} lg={1}></Col>
 					</Row>
 				</Jumbotron>
-			</Container>
+			</Grid>
 		</Layout>
 	)
 }

@@ -1,19 +1,22 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import {Jumbotron, Container} from 'reactstrap'
-import Button from '../buttons'
+import {Grid} from 'react-styled-flexboxgrid'
+
+import Button from '../elements/buttons'
+import {Jumbotron} from '../elements/jumbotron'
+import {Heading1, Lead} from '../elements/text'
 
 const HomeBox = () => {
 	return (
-		<Container>
+		<Grid>
 			<Jumbotron style={{marginTop: '22px', padding: '32px 32px'}}>
-				<h1 className="display-3">Welcome to Sam's Rick & Morty App</h1>
-				<p className="lead">School yourself using the characters page.</p>
-				<p className="lead">
+				<Heading1>Welcome to Morty and Rick</Heading1>
+				<Lead>School yourself using the characters page.</Lead>
+				<Lead>
 					When you're ready, play the Guessing Game to put your Rick & Morty
 					character knowledge to the test!
-				</p>
-				<hr className="my-2" />
+				</Lead>
+				<hr />
 				<p></p>
 				<Link to="/characters/">
 					<Button animate>Characters</Button>
@@ -22,7 +25,7 @@ const HomeBox = () => {
 					<Button animate>Guessing Game</Button>
 				</Link>
 			</Jumbotron>
-		</Container>
+		</Grid>
 	)
 }
 
