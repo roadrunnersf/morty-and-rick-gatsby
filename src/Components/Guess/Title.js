@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDrag} from 'react-dnd'
-import Button from '../buttons'
+import Button from '../elements/buttons'
 
 const Title = ({name, type, isDropped}) => {
 	const [{opacity}, drag] = useDrag({

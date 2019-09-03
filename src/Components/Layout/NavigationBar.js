@@ -6,7 +6,7 @@ const NavigationBar = () => (
 	<Navbar style={{marginBottom: '8px'}} color="dark" dark expand="xs">
 		<NavbarBrand style={{padding: '0px'}} tag="div">
 			<Link style={{color: '#999999'}} to="/">
-				{String.raw`<RickAndMorty />`}
+				{String.raw`<MortyAndRick />`}
 			</Link>
 		</NavbarBrand>
 

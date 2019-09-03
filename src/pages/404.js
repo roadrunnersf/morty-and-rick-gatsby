@@ -1,15 +1,15 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import 'bootstrap/dist/css/bootstrap.css'
-import {Jumbotron, Container} from 'reactstrap'
-import Button from '../Components/buttons'
+import {Grid} from 'react-styled-flexboxgrid'
 
+import {Jumbotron} from '../Components/elements/jumbotron'
+import Button from '../Components/elements/buttons'
 import Layout from './../Components/Layout'
 
 const Four0Four = ({location}) => {
 	return (
 		<Layout helmet={'404'}>
-			<Container>
+			<Grid>
 				<Jumbotron>
 					<h1 className="display-3">404</h1>
 					<hr className="my-2" />
@@ -20,7 +20,7 @@ const Four0Four = ({location}) => {
 						<Button animate>Home</Button>
 					</Link>
 				</Jumbotron>
-			</Container>
+			</Grid>
 		</Layout>
 	)
 }
