@@ -8,14 +8,7 @@ const CharactersView = ({characters}) => {
 		<Grid>
 			<Row>
 				{characters.map((character, index) => (
-					<Col
-						xs={6}
-						sm={6}
-						md={4}
-						lg={3}
-						xl={3}
-						key={character.id}
-						style={{padding: '9px 9px'}}>
+					<Col xs={6} sm={6} md={4} lg={3} key={character.id}>
 						<CharactersViewCard
 							key={character.id}
 							character={character}
