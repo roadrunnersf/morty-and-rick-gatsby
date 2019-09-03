@@ -4,9 +4,9 @@ import {Link} from 'gatsby'
 import {Grid} from 'react-styled-flexboxgrid'
 
 import {Jumbotron} from '../Components/elements/jumbotron'
-import {Button} from '../Components/elements/buttons'
+import Button from '../Components/elements/buttons'
 import Layout from './../Components/Layout'
-import {Heading1, Lead} from '../Components/elements/text/index'
+import {Heading1, Lead} from '../Components/elements/text'
 
 const Four0Four = ({location}) => {
 	return (
@@ -19,7 +19,7 @@ const Four0Four = ({location}) => {
 						You tried to go to {location.pathname} and the page does not exist.
 					</Lead>
 					<Link to="/">
-						<Button animate>Home</Button>
+						<Button animate>Go Home</Button>
 					</Link>
 				</Jumbotron>
 			</Grid>
