@@ -3,6 +3,7 @@ import {Progress} from 'reactstrap'
 import {Grid, Row, Col} from 'react-styled-flexboxgrid'
 
 import {Card, CardImg, CardHeader} from '../elements/cards'
+import {Paragraph} from '../elements/text'
 import {Jumbotron} from '../elements/jumbotron'
 import Layout from './../Layout'
 
@@ -36,10 +37,9 @@ const Complete = ({pics, max, score, wrong}) => {
 							</Row>
 							<Row>
 								<Col xs={12} style={{padding: '7px'}}>
-									<p></p>
-									<div className="text-center">
+									<Paragraph alignCenter>
 										{score} of {max}
-									</div>
+									</Paragraph>
 									<Progress animated multi max={max} style={{height: 40}}>
 										<Progress
 											bar

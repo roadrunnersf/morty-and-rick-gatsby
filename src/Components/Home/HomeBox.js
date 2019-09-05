@@ -17,7 +17,6 @@ const HomeBox = () => {
 					character knowledge to the test!
 				</Lead>
 				<hr />
-				<p></p>
 				<Link to="/characters/">
 					<Button animate>Characters</Button>
 				</Link>

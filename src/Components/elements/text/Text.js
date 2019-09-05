@@ -13,6 +13,10 @@ export const Paragraph = styled.p`
 	font: ${FONT};
 	font-size: 16px;
 	font-weight: 400;
+	text-align: left;
+	text-align: ${props => props.alignCenter && `center`};
+	text-align: ${props => props.alignRight && `right`};
+	text-align: ${props => props.alignJustify && `justify`};
 	margin: 0px 0px ${PARAGRAPH_MARGIN}px;
 `
 
