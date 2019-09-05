@@ -23,18 +23,22 @@ const GuessView = ({
 			<Grid>
 				<Row>
 					<Col xs={10}>
-						{pics.map(({accepts, lastDroppedItem, image, name}, index) => (
-							<Pic
-								image={image}
-								name={name}
-								accept={accepts}
-								lastDroppedItem={lastDroppedItem}
-								onDrop={item => handleDrop(index, item)}
-								key={index}
-							/>
-						))}
+						<Row>
+							{pics.map(({accepts, lastDroppedItem, image, name}, index) => (
+								<Col xs={4}>
+									<Pic
+										image={image}
+										name={name}
+										accept={accepts}
+										lastDroppedItem={lastDroppedItem}
+										onDrop={item => handleDrop(index, item)}
+										key={index}
+									/>
+								</Col>
+							))}
+						</Row>
 					</Col>
-					<Col xs={2}>
+					<Col xs={2} style={{paddingLeft: '24px', marginTop: '9px'}}>
 						{titles.map(({name, type}, index) => (
 							<Row key={index}>
 								<Title
@@ -48,7 +52,7 @@ const GuessView = ({
 					</Col>
 				</Row>
 				<Row>
-					<Col xs={10}>
+					<Col xs={10} style={{marginLeft: '9px', marginTop: '12px'}}>
 						<Score pics={pics} max={pics.length} score={score} wrong={wrong} />
 					</Col>
 				</Row>

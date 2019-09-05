@@ -13,6 +13,7 @@ const Pic = ({image, lastDroppedItem, onDrop}) => {
 			canDrop: monitor.canDrop(),
 		}),
 	})
+
 	const isActive = canDrop && isOver
 	let opacity
 	if (isActive || lastDroppedItem) {
@@ -21,27 +22,14 @@ const Pic = ({image, lastDroppedItem, onDrop}) => {
 		opacity = 1
 	}
 
-	const cardJSX = (
-		<Card>
+	return (
+		<Card ref={!lastDroppedItem ? drop : undefined}>
 			<CardImg src={image} style={{opacity}} />
 
 			{lastDroppedItem && <CardHeader>{lastDroppedItem.name}</CardHeader>}
 
 			{isActive && <CardHeader>Release to drop.</CardHeader>}
 		</Card>
-	)
-	const divStyle = {
-		display: 'inline-block',
-		width: '33.3333%',
-		padding: 5,
-	}
-
-	return !lastDroppedItem ? (
-		<div ref={drop} style={divStyle}>
-			{cardJSX}
-		</div>
-	) : (
-		<div style={divStyle}>{cardJSX}</div>
 	)
 }
 export default Pic
