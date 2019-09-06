@@ -2,7 +2,7 @@ import React from 'react'
 import {useDrop} from 'react-dnd'
 import ItemTypes from './../../utils/ItemTypes'
 
-import {Card, CardImg, CardHeader} from '../elements/cards'
+import Card from '../elements/cards'
 
 const Pic = ({image, lastDroppedItem, onDrop}) => {
 	const [{canDrop, isOver}, drop] = useDrop({
@@ -24,11 +24,11 @@ const Pic = ({image, lastDroppedItem, onDrop}) => {
 
 	return (
 		<Card ref={!lastDroppedItem ? drop : undefined}>
-			<CardImg src={image} style={{opacity}} />
+			<Card.Img src={image} style={{opacity}} />
 
-			{lastDroppedItem && <CardHeader>{lastDroppedItem.name}</CardHeader>}
+			{lastDroppedItem && <Card.Header>{lastDroppedItem.name}</Card.Header>}
 
-			{isActive && <CardHeader>Release to drop.</CardHeader>}
+			{isActive && <Card.Header>Release to drop.</Card.Header>}
 		</Card>
 	)
 }

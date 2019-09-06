@@ -1,22 +1,22 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import {Card, CardHeader, CardImg, CardBody, CardText} from '../elements/cards'
+import Card from '../elements/cards'
 
 //import ContentLoader from "react-content-loader";
 
 const CharactersViewCard = ({character, linkURL}) => (
 	<Card outline color="secondary" style={{width: '100%'}}>
 		<Link to={linkURL}>
-			<CardImg src={character.image} alt={character.name} />
+			<Card.Img noRadius src={character.image} alt={character.name} />
 		</Link>
 
-		<CardHeader strong>{character.name}</CardHeader>
-		<CardBody>
-			<CardText>Species: {character.species}</CardText>
-			<CardText>Gender: {character.gender}</CardText>
-			<CardText>Status: {character.status}</CardText>
-		</CardBody>
+		<Card.Header strong>{character.name}</Card.Header>
+		<Card.Body>
+			<Card.Text>Species: {character.species}</Card.Text>
+			<Card.Text>Gender: {character.gender}</Card.Text>
+			<Card.Text>Status: {character.status}</Card.Text>
+		</Card.Body>
 	</Card>
 )
 
