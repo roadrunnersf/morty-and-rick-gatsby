@@ -1,14 +1,12 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
 
-import NavigationBar from './NavigationBar.js'
+import Nav from './Nav'
 
 const Layout = ({children, helmet}) => (
 	<>
 		<Helmet title={helmet} />
-
-		<NavigationBar />
-
+		<Nav />
 		<main>{children}</main>
 	</>
 )

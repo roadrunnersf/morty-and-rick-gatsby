@@ -14,9 +14,10 @@ const Characters = ({data}) => {
 	}, [data.allCharacters.nodes])
 
 	return (
-		<Layout helmet={'Character Viewer'}>
+		<>
+			<Layout helmet={'Character Viewer'} />
 			<CharactersView characters={characters} />
-		</Layout>
+		</>
 	)
 }
 
