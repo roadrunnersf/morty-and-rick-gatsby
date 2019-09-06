@@ -9,3 +9,5 @@ export const COOL_GREY_LIGHT = `rgba(232,231,234, 1)` //PANTONE 663 XGC
 export const FONT = `'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
 		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 		'Noto Color Emoji'`
+
+export const BORDER_RADIUS = '25px'
