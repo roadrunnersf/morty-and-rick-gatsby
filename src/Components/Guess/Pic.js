@@ -15,16 +15,11 @@ const Pic = ({image, lastDroppedItem, onDrop}) => {
 	})
 
 	const isActive = canDrop && isOver
-	let opacity
-	if (isActive || lastDroppedItem) {
-		opacity = 0.6
-	} else if (canDrop) {
-		opacity = 1
-	}
+	const faint = Boolean(isActive || lastDroppedItem)
 
 	return (
 		<Card ref={!lastDroppedItem ? drop : undefined}>
-			<Card.Img src={image} style={{opacity}} />
+			<Card.Img faint={faint} src={image} />
 
 			{lastDroppedItem && <Card.Header>{lastDroppedItem.name}</Card.Header>}
 

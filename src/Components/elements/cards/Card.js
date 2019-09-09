@@ -36,6 +36,8 @@ const Img = styled.img`
 	width: 100%;
 	border-radius: 25px 25px 0 0;
 
+	${props => props.faint && `opacity: 0.6;`}
+
 	&:last-child {
 		border-bottom-left-radius: ${BORDER_RADIUS};
 		border-bottom-right-radius: ${BORDER_RADIUS};
@@ -43,8 +45,8 @@ const Img = styled.img`
 		${props =>
 			props.noRadius &&
 			`
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;`}
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;`}
 	}
 `
 // ^^^ noRadius prop is to override cases where CardImg is inside a Link tag and so gets bottom radius where is shouldn't
