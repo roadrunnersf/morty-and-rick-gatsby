@@ -10,13 +10,13 @@ const Navigation = () => {
 			<Nav.Box>
 				<Nav.List>
 					<Link to="/">
-						<Nav.Item home>Home</Nav.Item>
+						<Nav.Item home>Morty & Rick</Nav.Item>
 					</Link>
 					<Link to="/characters">
 						<Nav.Item>Characters</Nav.Item>
 					</Link>
 					<Link to="/guess">
-						<Nav.Item>Guessing Game</Nav.Item>
+						<Nav.Item>Guesser</Nav.Item>
 					</Link>
 				</Nav.List>
 			</Nav.Box>
