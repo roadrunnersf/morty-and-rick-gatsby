@@ -1,7 +1,6 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
 
-import CharactersViewCard from './../Components/Characters/CharactersViewCard'
+import {CharacterCard} from '../Components/elements/cards'
 import Layout from './../Components/Layout'
 
 const CharactersSingle = props => {
@@ -9,7 +8,7 @@ const CharactersSingle = props => {
 	return (
 		<Layout helmet={character.name}>
 			<div style={{width: 250}}>
-				<CharactersViewCard
+				<CharacterCard
 					character={character}
 					linkURL={`/characters/${parseInt(character.id, 10) + 1}/`}
 				/>

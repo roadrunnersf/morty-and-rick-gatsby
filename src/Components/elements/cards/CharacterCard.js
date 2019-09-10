@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import Card from '../elements/cards'
+import {Card} from './'
 
 //import ContentLoader from "react-content-loader";
 
-const CharactersViewCard = ({character, linkURL}) => (
+const CharacterCard = ({character, linkURL}) => (
 	<Card outline color="secondary" style={{width: '100%'}}>
 		<Link to={linkURL}>
 			<Card.Img noRadius src={character.image} alt={character.name} />
@@ -20,4 +20,4 @@ const CharactersViewCard = ({character, linkURL}) => (
 	</Card>
 )
 
-export default CharactersViewCard
+export default CharacterCard

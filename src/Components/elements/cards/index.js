@@ -1,3 +1,4 @@
 import Card from './Card'
+import CharacterCard from './CharacterCard'
 
-export default Card
+export {Card, CharacterCard}
