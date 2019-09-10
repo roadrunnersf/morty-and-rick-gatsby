@@ -1,13 +1,13 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import Nav from '../elements/nav'
+import {Nav} from '../elements/layout'
 
 const Navigation = () => {
 	return (
 		<>
 			<Nav.Head />
-			<Nav.Box>
+			<Nav.Container>
 				<Nav.List>
 					<Link to="/">
 						<Nav.Item home>Morty & Rick</Nav.Item>
@@ -19,7 +19,7 @@ const Navigation = () => {
 						<Nav.Item>Guesser</Nav.Item>
 					</Link>
 				</Nav.List>
-			</Nav.Box>
+			</Nav.Container>
 		</>
 	)
 }

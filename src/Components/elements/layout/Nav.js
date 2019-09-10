@@ -5,10 +5,11 @@ const Head = styled.div`
 	position: relative;
 	width: 100%;
 	height: 100px;
+	margin-bottom: 28px;
 	background-color: ${COOL_GREY_LIGHT};
 `
-const Box = styled.nav`
-	position: fixed;
+const Container = styled.nav`
+	position: absolute;
 	z-index: 100;
 	top: 16px;
 	right: 40px;
@@ -19,7 +20,6 @@ const List = styled.ul`
 	text-align: right;
 	font-weight: 400;
 `
-
 const Item = styled.li`
 	font-size: 1rem;
 	line-height: 1.4rem;
@@ -29,8 +29,8 @@ const Item = styled.li`
 
 const Nav = {}
 Nav.Head = Head
-Nav.Box = Box
+Nav.Container = Container
 Nav.List = List
 Nav.Item = Item
 
-export default Nav
+export {Nav}
