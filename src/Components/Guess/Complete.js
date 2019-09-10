@@ -2,7 +2,7 @@ import React from 'react'
 import {Progress} from 'reactstrap'
 import {Grid, Row, Col} from 'react-styled-flexboxgrid'
 
-import Card from '../elements/cards'
+import {Card} from '../elements/cards'
 import {Paragraph} from '../elements/text'
 import Layout from './../Layout'
 
@@ -35,7 +35,7 @@ const Complete = ({pics, max, score, wrong}) => {
 						</Row>
 						<Row>
 							<Col xs={12} style={{padding: '7px'}}>
-								<Paragraph alignCenter>
+								<Paragraph align={'center'}>
 									{score} of {max}
 								</Paragraph>
 								<Progress animated multi max={max} style={{height: 40}}>

@@ -1,28 +1,35 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {FONT} from '../../../config/styles'
 
-const PARAGRAPH_MARGIN = 8
+const PARAGRAPH_MARGIN = '8px'
+
+const textAlignProps = css`
+	text-align: ${props =>
+		(props.align === 'center' && 'center') ||
+		(props.align === 'right' && 'right') ||
+		(props.align === 'justify' && 'justify') ||
+		'left'};
+`
 
 export const Heading1 = styled.h1`
 	font: ${FONT};
 	font-size: 72px;
 	font-weight: 300;
-	margin: 0px 0px ${PARAGRAPH_MARGIN}px;
+	${textAlignProps};
+	margin: 0 0 ${PARAGRAPH_MARGIN};
 `
 export const Paragraph = styled.p`
 	font: ${FONT};
 	font-size: 16px;
 	font-weight: 400;
-	text-align: left;
-	text-align: ${props => props.alignCenter && `center`};
-	text-align: ${props => props.alignRight && `right`};
-	text-align: ${props => props.alignJustify && `justify`};
-	margin: 0px 0px ${PARAGRAPH_MARGIN}px;
+	${textAlignProps};
+	margin: 0 0 ${PARAGRAPH_MARGIN};
 `
 
 export const Lead = styled.p`
 	font: ${FONT};
 	font-size: 20px;
 	font-weight: 300;
-	margin: 0px 0px ${PARAGRAPH_MARGIN}px;
+	${textAlignProps};
+	margin: 0 0 ${PARAGRAPH_MARGIN};
 `
