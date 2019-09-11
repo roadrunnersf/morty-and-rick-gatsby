@@ -13,16 +13,18 @@ const Container = styled.nav`
 	z-index: 100;
 	top: 16px;
 	right: 40px;
-	font: ${FONT};
 `
 const List = styled.ul`
 	list-style-type: none;
 	text-align: right;
-	font-weight: 400;
 `
 const Item = styled.li`
+	list-style-type: none;
+	text-align: right;
 	font-size: 1rem;
 	line-height: 1.4rem;
+	font: ${FONT};
+	font-weight: 400;
 	${props => props.home && `font-weight: 600;`}
 	color: black;
 `
