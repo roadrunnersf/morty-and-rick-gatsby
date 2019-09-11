@@ -5,7 +5,7 @@ import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 import {CharacterCard} from '../Components/elements/cards'
 import Layout from './../Components/Layout'
 
-import useRandomCharacters from '../utils/custom-hooks/randomCharacters'
+import useRandomCharacters from '../utils/hooks/randomCharacters'
 
 const Characters = ({data}) => {
 	const characters = useRandomCharacters(data.allCharacters.nodes, 20)
