@@ -6,7 +6,7 @@ const useRandomCharacters = (data, numberOfCharacters) => {
 
 	useEffect(() => {
 		setCharacters(randFromList(data, numberOfCharacters))
-	}, [data, numberOfCharacters])
+	}, [])
 
 	return characters
 }
