@@ -1,5 +1,15 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {FONT, COOL_GREY_LIGHT} from '../../../config/styles'
+
+const listStyle = css`
+	list-style-type: none;
+	text-align: right;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	font: ${FONT};
+	font-weight: 400;
+	color: black;
+`
 
 const Head = styled.div`
 	position: relative;
@@ -13,20 +23,14 @@ const Container = styled.nav`
 	z-index: 100;
 	top: 16px;
 	right: 40px;
+	${listStyle};
 `
 const List = styled.ul`
-	list-style-type: none;
-	text-align: right;
+	${listStyle};
 `
 const Item = styled.li`
-	list-style-type: none;
-	text-align: right;
-	font-size: 1rem;
-	line-height: 1.4rem;
-	font: ${FONT};
-	font-weight: 400;
+	${listStyle};
 	${props => props.home && `font-weight: 600;`}
-	color: black;
 `
 
 const Nav = {}
