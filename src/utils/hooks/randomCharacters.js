@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react'
-import {randFromList} from '../'
+import {randFromArray} from '../'
 
 const useRandomCharacters = (data, numberOfCharacters) => {
 	const [characters, setCharacters] = useState([])
 
 	useEffect(() => {
-		setCharacters(randFromList(data, numberOfCharacters))
+		setCharacters(randFromArray(data, numberOfCharacters))
+		// eslint-disable-next-line
 	}, [])
 
 	return characters
