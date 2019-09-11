@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useCallback} from 'react'
 import {graphql} from 'gatsby'
 import update from 'immutability-helper'
 import {DndProvider} from 'react-dnd'
@@ -8,24 +8,29 @@ import 'bootstrap/dist/css/bootstrap.css'
 import GuessView from './../../Components/Guess/View'
 import Complete from './../../Components/Guess/Complete'
 
+import useScore from '../../utils/hooks/score'
 import ItemTypes from './../../utils/ItemTypes'
-import {
-	shuffle,
-	randFromList,
-	arrScore,
-	arrWrong,
-	picsComplete,
-} from './../../utils'
+import {shuffle, randFromList, picsComplete} from './../../utils'
 
 const Guess = ({data}) => {
-	const [pics, setPics] = useState([1, 1]) //this is needed so that pics can still be used before it is updated in useEffect
-	const [titles, setTitles] = useState([])
+	const characters = randFromList(data.allCharacters.nodes, 6)
+
+	const [pics, setPics] = useState(
+		shuffle(characters).map(obj => ({
+			...obj,
+			accepts: ItemTypes.TITLE,
+			lastDroppedItem: null,
+		}))
+	)
+	const [titles] = useState(
+		characters
+			.slice()
+			.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+			.map(obj => ({...obj, type: ItemTypes.TITLE}))
+	)
 	const [droppedBoxTitles, setDroppedBoxTitles] = useState([])
 
-	const [score, setScore] = useState(undefined)
-	const [wrong, setWrong] = useState(undefined)
-
-	let characters = randFromList(data.allCharacters.nodes, 6)
+	const [score, wrong] = useScore(pics)
 
 	const handleDrop = useCallback(
 		(index, item) => {
@@ -45,29 +50,6 @@ const Guess = ({data}) => {
 		},
 		[droppedBoxTitles, pics]
 	)
-
-	useEffect(() => {
-		setPics(
-			shuffle(characters).map(obj => ({
-				...obj,
-				accepts: ItemTypes.TITLE,
-				lastDroppedItem: null,
-			}))
-		)
-		setTitles(
-			characters
-				.slice()
-				.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
-				.map(obj => ({...obj, type: ItemTypes.TITLE}))
-		)
-		// eslint-disable-next-line
-	}, [])
-
-	useEffect(() => {
-		// score updates every time there is a change to pics
-		pics && setScore(arrScore(pics))
-		pics && setWrong(arrWrong(pics))
-	}, [pics])
 
 	return (
 		<DndProvider backend={HTML5Backend}>
