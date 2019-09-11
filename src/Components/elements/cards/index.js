@@ -1,3 +1,4 @@
-import {Card, CardHeader, CardImg, CardText, CardBody} from './Card'
+import Card from './Card'
+import CharacterCard from './CharacterCard'
 
-export {Card, CardHeader, CardImg, CardText, CardBody}
+export {Card, CharacterCard}

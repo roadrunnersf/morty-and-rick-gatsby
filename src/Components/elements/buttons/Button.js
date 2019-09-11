@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {FONT, BLUE, BLUE_LIGHTER} from '../../../config/styles'
 
 const Button = styled.button`
@@ -15,6 +15,12 @@ const Button = styled.button`
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1;
+	${props =>
+		props.noWrap &&
+		css`
+			overflow: hidden;
+			white-space: nowrap;
+		`};
 	margin-right: 7px;
 	margin-bottom: 7px;
 	padding: 0.6em 1.4em;
