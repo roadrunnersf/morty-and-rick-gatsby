@@ -1,7 +1,7 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
 
-import Nav from './Nav'
+import Nav from './Navigation'
 
 const Layout = ({children, helmet}) => (
 	<>

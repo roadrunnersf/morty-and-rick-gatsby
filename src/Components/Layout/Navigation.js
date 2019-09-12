@@ -9,15 +9,15 @@ const Navigation = () => {
 			<Nav.Head />
 			<Nav.Container>
 				<Nav.List>
-					<Link to="/">
+					<Nav.Link to="/">
 						<Nav.Item home>Morty & Rick</Nav.Item>
-					</Link>
-					<Link to="/characters">
+					</Nav.Link>
+					<Nav.Link to="/characters">
 						<Nav.Item>Characters</Nav.Item>
-					</Link>
-					<Link to="/guess">
+					</Nav.Link>
+					<Nav.Link to="/guess">
 						<Nav.Item>Guesser</Nav.Item>
-					</Link>
+					</Nav.Link>
 				</Nav.List>
 			</Nav.Container>
 		</>
