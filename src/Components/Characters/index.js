@@ -3,6 +3,7 @@ import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 
 import {CharacterCard} from '../elements/cards'
 import Layout from '../Layout'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import useRandomCharacters from '../../utils/hooks/randomCharacters'
 

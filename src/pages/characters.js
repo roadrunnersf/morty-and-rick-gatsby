@@ -1,5 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import Characters from '../Components/Characters'
 
