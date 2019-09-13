@@ -32,7 +32,7 @@ exports.createPages = async ({graphql, actions}) => {
 				species: node.species,
 				gender: node.gender,
 				status: node.status,
-			}, // This is to pass data as props to your component.
+			}, // This is to pass data as props to the component.
 		})
 	})
 }
