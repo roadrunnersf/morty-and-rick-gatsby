@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import {Grid} from 'react-styled-flexboxgrid'
 
 import Button from '../elements/buttons'
 import {Heading1, Lead} from '../elements/text'
@@ -8,7 +7,7 @@ import {Box} from '../elements/layout'
 
 const HomeBox = () => {
 	return (
-		<Grid>
+		<>
 			<Heading1 align={'center'}>Welcome to Morty & Rick</Heading1>
 			<Lead align={'center'}>School yourself using the characters page.</Lead>
 			<Lead align={'center'}>
@@ -25,7 +24,7 @@ const HomeBox = () => {
 					<Button animate>Guessing Game</Button>
 				</Link>
 			</Box.Center>
-		</Grid>
+		</>
 	)
 }
 

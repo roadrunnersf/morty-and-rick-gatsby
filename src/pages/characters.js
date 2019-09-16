@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {Grid, Col, Row} from 'react-styled-flexboxgrid'
+import {Col, Row} from 'react-styled-flexboxgrid'
 
 import {CharacterCard} from '../Components/elements/cards'
 import Layout from './../Components/Layout'
@@ -8,23 +8,21 @@ import Layout from './../Components/Layout'
 import useRandomCharacters from '../utils/hooks/randomCharacters'
 
 const Characters = ({data}) => {
-	const characters = useRandomCharacters(data.allCharacters.nodes, 20)
+	const characters = useRandomCharacters(data.allCharacters.nodes, 40)
 
 	return (
 		<Layout helmet={'Character Viewer'}>
-			<Grid>
-				<Row>
-					{characters.map((character, index) => (
-						<Col xs={6} sm={4} md={4} lg={3} key={character.id}>
-							<CharacterCard
-								key={character.id}
-								character={character}
-								linkURL={`/characters/${character.id}/`}
-							/>
-						</Col>
-					))}
-				</Row>
-			</Grid>
+			<Row>
+				{characters.map((character, index) => (
+					<Col xs={12} sm={4} md={4} lg={3} key={character.id}>
+						<CharacterCard
+							key={character.id}
+							character={character}
+							linkURL={`/characters/${character.id}/`}
+						/>
+					</Col>
+				))}
+			</Row>
 		</Layout>
 	)
 }
