@@ -1,10 +1,6 @@
 const axios = require('axios')
 
-exports.sourceNodes = async ({
-	actions,
-	//createNodeId,
-	createContentDigest,
-}) => {
+exports.sourceNodes = async ({actions, createContentDigest}) => {
 	const {createNode} = actions
 
 	const integerList = (start, length) =>
@@ -16,12 +12,11 @@ exports.sourceNodes = async ({
 	)}`
 
 	const rickMorty = await axios.get(rickMortyURL)
-	//const query = await axios.get(rickMortyURL)
+
 	rickMorty.data.forEach(character => {
 		const nodeContent = JSON.stringify(character)
 		const nodeMeta = {
 			id: character.id.toString(),
-			//id: createNodeId(`char-data-${character.id}`),
 			parent: null,
 			children: [],
 			internal: {
