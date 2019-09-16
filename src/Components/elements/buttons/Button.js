@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components'
-import {FONT, BLUE, BLUE_LIGHTER} from '../../../config/styles'
+import {FONT, BLUE, BLUE_LIGHTER, FAINT_OPACITY} from '../../../config/styles'
 
 const Button = styled.button`
 	font-family: ${FONT};
@@ -38,5 +38,6 @@ const Button = styled.button`
 		}
 		transition: all 160ms ease-in-out
 		`}
+	${props => props.faint && `opacity: ${FAINT_OPACITY.STRONG};`}
 `
 export default Button
