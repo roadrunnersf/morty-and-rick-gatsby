@@ -3,7 +3,6 @@ import {graphql} from 'gatsby'
 import update from 'immutability-helper'
 import {DndProvider} from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
-import 'bootstrap/dist/css/bootstrap.css'
 
 import GuessView from './../../Components/Guess/View'
 import Complete from './../../Components/Guess/Complete'
