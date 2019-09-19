@@ -6,14 +6,12 @@ import Layout from './../Components/Layout'
 import {Box} from '../Components/elements/layout'
 
 const CharactersSingle = props => {
-	console.log('props.pageContext', props.pageContext)
-	const character = props.pageContext
 	const characters = props.pageContext.characters
 	return (
-		<Layout helmet={character.name}>
+		<Layout helmet={characters[1].name}>
 			<Box.Center>
 				<Row>
-					{props.pageContext.characters.map(character => (
+					{characters.map(character => (
 						<Col xs={12} sm={4} md={4} lg={4} key={character.id}>
 							<CharacterCard
 								character={character}

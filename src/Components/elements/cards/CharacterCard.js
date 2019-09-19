@@ -5,7 +5,7 @@ import {Card} from './'
 //import ContentLoader from "react-content-loader";
 
 const CharacterCard = ({character, linkURL}) => (
-	<Card outline color="secondary" style={{width: '100%'}}>
+	<Card outline color="secondary">
 		<Card.Link to={linkURL}>
 			<Card.Img noRadius src={character.image} alt={character.name} />
 		</Card.Link>

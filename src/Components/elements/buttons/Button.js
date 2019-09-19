@@ -7,7 +7,7 @@ const Button = styled.button`
 	appearance: none;
 	background-color: ${BLUE};
 	border: 1px solid ${BLUE};
-	border-radius: 0.4em;
+	border-radius: 3px;
 	color: white;
 	cursor: pointer;
 	display: inline-block;
