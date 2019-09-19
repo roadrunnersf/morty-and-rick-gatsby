@@ -2,7 +2,7 @@ import React from 'react'
 import {Link as GLink} from 'gatsby'
 import styled from 'styled-components'
 
-import {FONT, COOL_GREY_LIGHT} from '../../../config/styles'
+import {FONT} from '../../../config/styles'
 
 const Nav = ({children}) => (
 	<Container>
@@ -15,7 +15,7 @@ const Container = styled.div`
 	width: 100%;
 	height: 90px;
 	margin-bottom: 28px;
-	background-color: ${COOL_GREY_LIGHT};
+	background-color: white;
 `
 
 const List = styled.ul`
