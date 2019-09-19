@@ -1,18 +1,26 @@
 import React from 'react'
 import {useDrag} from 'react-dnd'
-import Button from '../elements/buttons'
+import {ButtonPopover} from '../elements/buttons'
 
 const Title = ({name, type, isDropped}) => {
-	const [{opacity}, drag] = useDrag({
+	const [{faint}, drag] = useDrag({
 		item: {name, type},
 		collect: monitor => ({
-			opacity: monitor.isDragging() ? 0.4 : 1,
+			faint: monitor.isDragging(),
 		}),
 	})
 	return (
-		<div ref={drag}>
-			{!isDropped && <Button style={{opacity}}>{name}</Button>}
-		</div>
+		<>
+			{!isDropped && (
+				<ButtonPopover
+					ref={drag}
+					faint={faint}
+					popText={'Drag me onto a picture!'}
+					pos={'left'}>
+					{name}
+				</ButtonPopover>
+			)}
+		</>
 	)
 }
 export default Title

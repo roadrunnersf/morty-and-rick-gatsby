@@ -1,4 +1,5 @@
 import Button from './Button'
+import ButtonPopover from './ButtonPopover'
 
-export {Button}
+export {Button, ButtonPopover}
 export default Button

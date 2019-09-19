@@ -12,14 +12,14 @@ const textAlignProps = css`
 `
 
 export const Heading1 = styled.h1`
-	font: ${FONT};
+	font-family: ${FONT};
 	font-size: 72px;
 	font-weight: 300;
 	${textAlignProps};
 	margin: 0 0 ${PARAGRAPH_MARGIN};
 `
 export const Paragraph = styled.p`
-	font: ${FONT};
+	font-family: ${FONT};
 	font-size: 16px;
 	font-weight: 400;
 	${textAlignProps};
@@ -27,7 +27,7 @@ export const Paragraph = styled.p`
 `
 
 export const Lead = styled.p`
-	font: ${FONT};
+	font-family: ${FONT};
 	font-size: 20px;
 	font-weight: 300;
 	${textAlignProps};

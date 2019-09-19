@@ -1,15 +1,14 @@
 import React from 'react'
-import {Link} from 'gatsby'
 
 import {Card} from './'
 
 //import ContentLoader from "react-content-loader";
 
 const CharacterCard = ({character, linkURL}) => (
-	<Card outline color="secondary" style={{width: '100%'}}>
-		<Link to={linkURL}>
+	<Card outline color="secondary">
+		<Card.Link to={linkURL}>
 			<Card.Img noRadius src={character.image} alt={character.name} />
-		</Link>
+		</Card.Link>
 
 		<Card.Header strong>{character.name}</Card.Header>
 		<Card.Body>
