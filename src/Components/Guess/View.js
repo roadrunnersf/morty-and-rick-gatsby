@@ -19,7 +19,7 @@ const GuessView = ({
 	}
 
 	return (
-		<Layout helmet={'Character Guesser'}>
+		<Layout limitGrid helmet={'Character Guesser'}>
 			<Row>
 				<Col xs={10}>
 					<Row>

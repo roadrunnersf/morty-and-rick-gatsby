@@ -1,24 +1,23 @@
 import React from 'react'
-import {Progress} from 'reactstrap'
 import {Row, Col} from 'react-styled-flexboxgrid'
 
+import {Progress} from '../elements/progress'
 import {Card} from '../elements/cards'
-import {Paragraph} from '../elements/text'
+import {Lead} from '../elements/text'
 import Layout from './../Layout'
 
 const Complete = ({pics, max, score, wrong}) => {
 	return (
-		<Layout helmet={'Guessing Complete!'}>
+		<Layout limitGrid helmet={'Guessing Complete!'}>
 			<Row>
-				<Col xs={0} lg={1}></Col>
-				<Col xs={12} lg={10}>
+				<Col xs={0} md={1} lg={2}></Col>
+				<Col xs={12} md={10} lg={8}>
 					<Row>
 						{pics.map(({name, lastDroppedItem, image, id}) => (
-							<Col key={id} sm={6} md={4} style={{padding: '7px'}}>
+							<Col key={id} xs={6} sm={4} md={4} lg={4}>
 								<Card
 									success={name === lastDroppedItem.name ? true : undefined}
-									danger={name !== lastDroppedItem.name ? true : undefined}
-									style={{width: '100%'}}>
+									danger={name !== lastDroppedItem.name ? true : undefined}>
 									<Card.Img
 										src={image}
 										alt={`Correct name: ${name}, Dropped name: ${lastDroppedItem.name}`}
@@ -33,29 +32,18 @@ const Complete = ({pics, max, score, wrong}) => {
 						))}
 					</Row>
 					<Row>
-						<Col xs={12} style={{padding: '7px'}}>
-							<Paragraph align={'center'}>
+						<Col xs={12} style={{marginLeft: '9px'}}>
+							<Lead align={'center'}>
 								{score} of {max}
-							</Paragraph>
-							<Progress animated multi max={max} style={{height: 40}}>
-								<Progress
-									bar
-									animated
-									color="success"
-									value={score}
-									max={max}></Progress>
-
-								<Progress
-									bar
-									animated
-									color="danger"
-									value={wrong}
-									max={max}></Progress>
+							</Lead>
+							<Progress height={'56'}>
+								<Progress.Bar success value={score} max={max}></Progress.Bar>
+								<Progress.Bar danger value={wrong} max={max}></Progress.Bar>
 							</Progress>
 						</Col>
 					</Row>
 				</Col>
-				<Col xs={0} lg={1}></Col>
+				<Col xs={0} md={1} lg={2}></Col>
 			</Row>
 		</Layout>
 	)
