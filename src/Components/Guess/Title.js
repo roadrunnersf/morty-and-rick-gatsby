@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDrag} from 'react-dnd'
-import Button from '../elements/buttons'
+import {ButtonPopover} from '../elements/buttons'
 
 const Title = ({name, type, isDropped}) => {
 	const [{faint}, drag] = useDrag({
@@ -12,9 +12,13 @@ const Title = ({name, type, isDropped}) => {
 	return (
 		<>
 			{!isDropped && (
-				<Button ref={drag} faint={faint}>
+				<ButtonPopover
+					ref={drag}
+					faint={faint}
+					popText={'Drag me onto a picture!'}
+					pos={'left'}>
 					{name}
-				</Button>
+				</ButtonPopover>
 			)}
 		</>
 	)
