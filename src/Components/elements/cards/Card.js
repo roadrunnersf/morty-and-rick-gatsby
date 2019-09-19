@@ -1,13 +1,9 @@
 import React from 'react'
 import {Link as GLink} from 'gatsby'
 import styled from 'styled-components'
-import {
-	FONT,
-	GREEN,
-	RED,
-	FAINT_OPACITY,
-	TRANSITION_TIME,
-} from '../../../config/styles'
+
+import * as scProps from '../../../config/scProps'
+import {FONT, FAINT_OPACITY, TRANSITION_TIME} from '../../../config/styles'
 
 const BORDER_RADIUS = '5px'
 
@@ -17,6 +13,7 @@ const Card = styled.div`
 	flex-direction: column;
 
 	width: 100%;
+	box-sizing: border-box;
 	margin: 9px;
 	border-radius: ${BORDER_RADIUS};
 
@@ -26,18 +23,7 @@ const Card = styled.div`
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	}
 	transition: box-shadow ${TRANSITION_TIME} ease-in-out;
-	${props =>
-		props.success &&
-		`
-		background-color: ${GREEN};
-		color: white;
-		`};
-	${props =>
-		props.danger &&
-		`
-		background-color: ${RED};
-		color: white;
-		`};
+	${scProps.colors}
 `
 const Link = styled(GLink)`
 	font-size: 0px;
