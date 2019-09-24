@@ -27,7 +27,7 @@ const LayoutLimitGrid = ({children, helmet}) => {
 	return <LayoutContent children={children} helmet={helmet} size={size} />
 }
 
-const LayoutContent = ({size, helmet, children}) => (
+export const LayoutContent = ({size, helmet, children}) => (
 	<>
 		<Global />
 		<Helmet title={helmet} />
