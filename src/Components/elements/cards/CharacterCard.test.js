@@ -18,8 +18,8 @@ const characterObjectMock = {
 describe('<CharacterCard />', () => {
 	const wrapper = shallow(
 		<CharacterCard
-			character={characterMock}
-			linkURL={`/characters/${parseInt(characterMock.id, 10)}/`}
+			character={characterObjectMock}
+			linkURL={`/characters/${parseInt(characterObjectMock.id, 10)}/`}
 		/>
 	)
 

@@ -28,6 +28,10 @@
 
     \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to view the data on the graphql data layer.
 
+1.  **Run tests**
+
+    Run tests manually using `npm test` or in watch mode using `npm test --watch`.
+
 1.  **Storybook**
 
     Install Storybook if needed:
