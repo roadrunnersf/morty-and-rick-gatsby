@@ -19,7 +19,7 @@ const Layout = ({children, helmet, limitGrid}) => (
 export default Layout
 
 const LayoutDefault = ({children, helmet}) => {
-	const size = 1000
+	const size = {height: 1000}
 	return <LayoutContent children={children} helmet={helmet} size={size} />
 }
 const LayoutLimitGrid = ({children, helmet}) => {
